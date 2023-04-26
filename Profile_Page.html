@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.10/css/superfish.css" integrity="sha512-DpU2gnU7xMR66lBmOUC4C/8+y0EZ6PTO1uu0pI0VYqDfH166SMbw99FCM6Kt/k2gLBuAMtmAsK1myd5xYtPLaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> <!-- CDN summon jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.10/js/superfish.min.js" integrity="sha512-gdhtclwUZCkHSSb/Q79++RssWL4eDLKHO15TC7kR/XnvlNyzcvZDRLn4BIuxadMWGIxPuj/IbFBInMpYockVCA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.hoverintent/1.10.2/jquery.hoverIntent.min.js" integrity="sha512-sw+oNcbTS/A0W2RCoTKChyNVw/OClp76mxn3yaOZiDaxpGMXFIWrZC6BlgtieaWp2oh2asgj44TJd1f4Lz2C8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js"></script>
+
+    <style>
+
+        header, main, footer
+        {
+            font-family: Arial, Helvetica, sans-serif; 
+            width: 100%;
+            margin: 0 auto;
+
+        }
+        body{			
+            background: lightblue
+        }
+        main{
+            padding-top: 200px;
+        }
+        .headerleft{
+            float: left;
+            width: 80%;
+            background-color: red;
+        }
+        .sf-menu a {
+            border-left: 1px solid black;
+            color: black;
+
+        }
+
+        .sf-menu li {
+            background:red;
+            padding-left: 0px;
+        }
+
+        .headerright{
+            width: 20%;
+            float: right;
+            background-color: yellow;
+        }
+
+        #flex {
+        display: flex; 
+        justify-content: space-between;
+        align-items: top;
+    }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $("dropdown").superfish();
+        });    
+    </script>
+</head>
+<body class="clearfix">
+    <header id="flex">
+        <div class="headerleft">
+        <div id="menu" class="sf-menu" >
+            <li style="background-color: red;"><a href="file:///C:/xampp/htdocs/Project/Skelly.html">ADVISING UR TRIPS BRELSON</a>
+                <ul>
+                    <li style="background-color: red;"><a href="file:///C:/xampp/htdocs/Project/Introduction.html">Introduction</a></li>
+                    <li style="background-color: red;"><a href="#">List of Guides</a></li>
+                    <li style="background-color: red;"><a href="#">Social Features</a></li>
+                    <li style="background-color: red;"><a href="#">Profile Page</a></li>
+                    <li style="background-color: red;"><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran">Contact Us</a></li>
+                </ul>
+            </li>
+        </div>     
+        </div>       
+
+        <div class="headerright">
+            <div id="menu" class="sf-menu" >
+                <li style="background-color: yellow;"><a href="#">PROFILE</a>
+                    <ul>
+                        <li style="background-color: yellow;"><a href="#">My Account</a></li>
+                        <li style="background-color: yellow;"><a href="#">My Guides</a></li>
+                        <li style="background-color: yellow;"><a href="#">My Network</a></li>
+                    </ul>
+                </li>
+            </div>  
+        </div>
+    </header>
