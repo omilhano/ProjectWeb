@@ -1,0 +1,190 @@
+header, main, footer
+{
+    font-family: Arial, Helvetica, sans-serif; 
+    width: 100%;
+    margin: 0 auto;
+
+
+}
+body{			
+    /*width: 100%;needless?*/
+    margin: 0 auto;
+    background: lightblue;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    
+}  
+
+
+header{
+    z-index: 999; 
+    /* porque 999 de index? */
+}
+
+.headerleft{
+    float: left;
+    width: 80%;
+    background-color: red;
+}
+
+.sf-menu a {
+    border-left: 1px solid black;
+    color: black;
+
+}
+
+.sf-menu li {
+    background:red;
+    padding-left: 0px;
+}
+
+.headerright{
+    width: 20%;
+    float: right;
+    background-color: yellow;
+
+}
+
+aside{
+    margin-left: 80%;
+    position: relative;
+    bottom: 305px;
+    
+}
+
+#realmain{
+    position: relative;
+    bottom: 100px;
+    width: 100%;
+    height: 100%;
+    max-width: 0 auto;
+    
+}
+
+.photos{
+    position: relative;
+    left: 11px;
+    z-index: 9;
+    top:110px
+}
+
+.content{
+    position: relative;
+    bottom: 80px; left: 510px; right:0;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+}
+
+footer{
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Times New Roman';
+}
+
+#flex {
+display: flex; 
+justify-content: space-between;
+align-items: top;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#profile_pic{
+    display: block;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+#username{
+    text-align: center;
+}
+
+.inputfile{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: teal;
+    border: 2px solid lavender;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: lightskyblue;
+}
+
+#delete_button{
+	opacity: 1;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: teal;
+    border: 2px solid lavender;
+    display: block;
+    margin: auto;
+
+}
+
+#delete_button:hover{
+    background-color: lightskyblue;
+}
+
+@media screen and (min-height: 635px){
+
+.content{
+    width: 44%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(-50%);
+
+}
+
+aside{
+    margin-left: 80%;
+    position: relative;
+    bottom: -95px;
+    left: 30px           
+    
+}
+
+.photos{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9;
+}
+
+#realmain{
+    position: relative;
+    bottom: 100px;
+    
+}
+}
