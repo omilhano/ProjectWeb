@@ -7,14 +7,13 @@ header, main, footer
 
 }
 body{			
-    /*width: 100%;needless?*/
-    margin: 0 auto;
     background: lightblue;
-    height: 100%;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    
-}  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+      
 .tooltip {
     position: relative;
     display: inline-block;
@@ -29,21 +28,11 @@ body{
     position: absolute;
     z-index: 1;
 }
-
-.content{
-    position: relative;
-    bottom: 80px; left: 510px; right:0;
-    font-weight: bold;
-    font-size: larger;
-    text-align: center;
-}
-
-footer{
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    text-align: center;
-    padding: 10px;
-    font-family: 'Times New Roman';
+.form-box {
+    border: 2px solid #ccc;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
 }
 
 #flex {
@@ -57,3 +46,4 @@ align-items: top;
     clear: both;
     display: table;
 }
+
