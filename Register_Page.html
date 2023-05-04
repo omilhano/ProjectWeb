@@ -7,25 +7,39 @@
     <title>Document</title>
     <link rel="stylesheet" href="Register_Page.css">
 </head>
+<script>
+    function checkPasswordMatch() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm_password").value;
+    
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    </script>
 <body>
-    <span>Email:</span> 
-    <br>
-    <input type="text" class="boxquestion">
-    <br>
-    <span>Password:</span>
-    <br>
-    <input type="text">
-    <br>
-    <span>Confirm Password:</span>
-    <br>
-    <input type="text">
-    <br>
-    <br>
-    <br>
-    <a href="file:///C:/xampp/htdocs/Project/Profile_Page.html">
-        <input type="submit" value="submit"></a>
-    <br>
-    <br>
-    Criar Verificação se as passwords dão match
+    <form onsubmit="return checkPasswordMatch()" action="Profile_Page.html">
+        <span>Email:</span> 
+        <br>
+        <input type="text" class="boxquestion">
+        <br>
+        <label for="password">Password:</label>
+        <br>
+        <input type="password" id="password" name="password">
+        <br>
+        <label for="confirm_password">Confirm Password:</label>
+        <br>
+        <input type="password" id="confirm_password" name="confirm_password">
+        <br>
+        <br>
+        <br>
+        <input type="submit" value="submit">
+        <br>
+        <br>
+    </form>
 </body>
 </html>
