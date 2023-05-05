@@ -75,18 +75,35 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <img id="roma" src="Elai.jpg"><br><br> 
-          <span class="texto_cidade">Roma</span>
+            <div id="left" class="slideshow" data-cycle-slides="> div">
+                <div id="map"></div>
+                <div>
+                    Guide Number 1
+                </div>                 
+            </div>
         </div>
         <div class="col-md-4">
-          <img id="cidade_lisboa" src="Cidade_Lisboa.jpg">
+            <div id="center" class="slideshow" data-cycle-slides="> div">
+                <div>
+
+                </div>
+                <div>
+                    Guide Number 2
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-          <img id="japao" src="Axel.jpg">
+        <div class="col-md-4" >
+            <div id="right" class="slideshow" data-cycle-slides="> div">
+                <div>
+
+                </div>
+                <div>
+                    Guide Number 3
+                </div>
+            </div>
         </div>
       </div>
     </div>
-    <!-- baixo pagina -->
 
     <footer>
       <p>Web Development 2023</p>
@@ -94,6 +111,70 @@
 
     <script>
         $(".slideshow").cycle({fx:"scrollHorz"}); //adiciona efeito de scroll horizontal para a esquerda
+
+        $(document).ready(function() {
+             $(".slideshow").cycle();
+        });
+        var directionsDisplay;
+    var directionsService = new google.maps.DirectionsService();
+
+    function initMap() {
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    var lisbon = new google.maps.LatLng(38.736946, -9.142685);
+    var mapOptions = {
+        zoom: 7,
+        center: lisbon
+    }
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    directionsDisplay.setMap(map);
+    calcRoute(map);
+    }
+
+    function calcRoute(map) {
+    var start = new google.maps.LatLng(38.736946, -9.142685);
+    var waypoint = new google.maps.LatLng( 40.416775,  -3.703790);
+    var end = new google.maps.LatLng(41.390205, 2.154007)
+    
+    var startMark = new google.maps.Marker({
+        position: start,
+        map: map,
+        title: "start"
+    });
+    /*var waypointMark = new google.maps.Marker({
+        position: waypoint,
+        map: map,
+        title: "waypoint"
+        });*/
+
+    
+    var waypoints = [
+    {
+      location: waypoint,
+      stopover: true,
+    },
+    ];
+    var endMark = new google.maps.Marker({
+        position: end,
+        map: map,
+        title: "end"
+    });
+    var request = {
+        origin: start,
+        waypoints : waypoints,
+        destination: end,
+        travelMode: 'DRIVING'
+    };
+
+    directionsService.route(request, function(response, status) {
+        if (status == 'OK') {
+        directionsDisplay.setDirections(response);
+        } else {
+        alert("directions request failed, status=" + status)
+        }
+        });
+        }
+        google.maps.event.addDomListener(window, "load", initMap);
+
       </script>
 </body>
 </html>
