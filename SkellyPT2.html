@@ -11,28 +11,20 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js" integrity="sha512-lvcHFfj/075LnEasZKOkj1MF6aLlWtmpFEyd/Kc+waRnlulG5er/2fEBA5DBff4BZrcwfvnft0PiAv4cIpkjpw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI1eO1w2j3bWV_m0D4TwP9zw8TzcmVgCc"></script>
-
-
-    <script>
-        $(document).ready(function(){
-            $(".dropdown").superfish();
-        });    
-
-    </script>
+ 
+    <!-- Load of the Javascript File -->
+    <script src="HomePageJS.js"></script>
 </head>
 <body>
       <!-- creating a navbar on top of page -->
   <nav class="navbar navbar-expand-md" id="navbar-expand-md" style="background-color: #e3f2fd;">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav nav-fill w-100">
             <li class="nav-item active">
               <a class="nav-link" href="Introduction.html">Introduction</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">List of Guides</a>
+              <a class="nav-link" href="#">List of Guides</a> 
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Social Features</a>
@@ -40,7 +32,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="profilepage.html">Profile Page</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item"> 
                 <a class="nav-link" href="https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran">Contact Us</a>
             </li>
             <li class="nav-item">
@@ -49,7 +41,7 @@
                   <ul style="background-color: #e3f2fd;">
                     <span>Username:</span> 
                     <br>
-                    <input type="email">
+                    <input type="text">
                     <br>
                     <span>Password:</span>
                     <br>
@@ -60,7 +52,7 @@
                     <br>
                     <a href="Register_Page.html">Dont have an account register here</a>
                   </ul>
-                </div>
+                </div>  
               </li>
           </ul>
         </div>
@@ -108,73 +100,5 @@
     <footer>
       <p>Web Development 2023</p>
     </footer>
-
-    <script>
-        $(".slideshow").cycle({fx:"scrollHorz"}); //adiciona efeito de scroll horizontal para a esquerda
-
-        $(document).ready(function() {
-             $(".slideshow").cycle();
-        });
-        var directionsDisplay;
-    var directionsService = new google.maps.DirectionsService();
-
-    function initMap() {
-    directionsDisplay = new google.maps.DirectionsRenderer();
-    var lisbon = new google.maps.LatLng(38.736946, -9.142685);
-    var mapOptions = {
-        zoom: 7,
-        center: lisbon
-    }
-    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    directionsDisplay.setMap(map);
-    calcRoute(map);
-    }
-
-    function calcRoute(map) {
-    var start = new google.maps.LatLng(38.736946, -9.142685);
-    var waypoint = new google.maps.LatLng( 40.416775,  -3.703790);
-    var end = new google.maps.LatLng(41.390205, 2.154007)
-    
-    var startMark = new google.maps.Marker({
-        position: start,
-        map: map,
-        title: "start"
-    });
-    /*var waypointMark = new google.maps.Marker({
-        position: waypoint,
-        map: map,
-        title: "waypoint"
-        });*/
-
-    
-    var waypoints = [
-    {
-      location: waypoint,
-      stopover: true,
-    },
-    ];
-    var endMark = new google.maps.Marker({
-        position: end,
-        map: map,
-        title: "end"
-    });
-    var request = {
-        origin: start,
-        waypoints : waypoints,
-        destination: end,
-        travelMode: 'DRIVING'
-    };
-
-    directionsService.route(request, function(response, status) {
-        if (status == 'OK') {
-        directionsDisplay.setDirections(response);
-        } else {
-        alert("directions request failed, status=" + status)
-        }
-        });
-        }
-        google.maps.event.addDomListener(window, "load", initMap);
-
-      </script>
 </body>
 </html>
