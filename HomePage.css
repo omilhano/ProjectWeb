@@ -3,6 +3,8 @@
     padding: 0;
 }
 
+/* NAVIGATION BAR */
+
 .navbar-brand{
     padding-left: 15px;
 
@@ -74,21 +76,23 @@ li:hover{
     background-color: #b3ccff;
 }
 
-h1{
-    text-align: center;
-}
+/*---------------------------*/
 
 .row{
     padding-top: 50px;
 }
+
 .col-md-12{
     padding-top: 100px;
 }
-#roma, #cidade_lisboa, #japao{
-  width: 400px;
-  height: 200px;
-  border-radius: 5%;
-}
+
+#left, #center, #right{
+    width: 400px;
+    height: 200px;
+    border-radius: 5%;
+    border: 1px solid black;
+  }
+
 .slideshow-container {
   position: relative;
   display: flex;
@@ -97,81 +101,31 @@ h1{
   z-index: 0;
 }
 
-.search-container {
-  position: absolute;
-  left: 50%;
-  top: 35%;
-  transform: translateX(-40%);
-  z-index: 1;
-}
-
-.form{
-    padding-right: 200px;
-}
-
-.form .fa-search{
-
-    position: absolute;
-    top:20px;
-    left: 20px;
-    color: #9ca3af;
-
-}
-
-.form span{
-
-  position: absolute;
-  right: 17px;
-  top: 13px;
-  padding: 2px;
-  border-left: 1px solid #d1d5db;
-
-}
-
-.left-pan{
-    padding-left: 7px;
-}
-
-.left-pan i{
-   
-   padding-left: 10px;
-}
-
-.form-input{
-
-    height: 55px;
-    text-indent: 33px;
-    border-radius: 10px;
-}
-
-.form-input:focus{
-
-    box-shadow: none;
-    border:none;
-}
-
-#roma:hover {
+#left:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
   filter: brightness(85%);
 }
 
-#cidade_lisboa:hover {
+#center:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
   filter: brightness(85%);
 }
 
-#japao:hover {
+#right:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
   filter: brightness(85%);
 }
 
-.texto_cidade{
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 30px;
+#map{
+    height: 200px;
+    width: 100%;
 }
+
+ /* FOOTER */
+
 
 footer{
     position: fixed;
@@ -180,6 +134,8 @@ footer{
     padding: 10px;
     font-family: 'Times New Roman';    
 }
+
+ /* ---------------------------------------------------------------------------------- */
 
 @media only screen and (max-width: 768px) {
     .image-container {
