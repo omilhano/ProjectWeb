@@ -1,17 +1,14 @@
+/* TODO also bootstrap cointainer?*/
 .container-fluid {
     margin: 0;
     padding: 0;
     height: 80vh;
 }
 
-footer {
-    height: 10vh;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    padding: 10px;
-    font-family: 'Times New Roman';
+/*bootstap container */
+.container-fluid {
+    margin: 0;
+    padding: 0;
 }
 
 .col-md-4 {
@@ -69,7 +66,7 @@ body {
 }
 
 /*
-.inputfile+label {
+.inputfile+label {  
     font-size: 1.25em;
     font-weight: 700;
     color: white;
@@ -84,32 +81,9 @@ body {
     background-color: lightskyblue;
 }
 
-
-
 #delete_button:hover {
     background-color: lightskyblue;
 }
-
-
-.container-fluid {
-    margin: 0;
-    padding: 0;
-}
-
-.navbar-brand {
-    padding-left: 15px;
-
-}
-
-.navbar {
-    height: 49px;
-}
-
-.navbar-nav {
-    display: flex;
-    justify-content: space-between;
-}
-
 
 .login {
     padding-right: 20px;
@@ -146,6 +120,20 @@ body {
     background-color: #b3ccff;
 }
 
+.navbar-brand {
+    padding-left: 15px;
+
+}
+
+.navbar {
+    height: 49px;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
 .navbar-nav .dropdown-menu {
     z-index: 9999;
 }
@@ -155,13 +143,15 @@ body {
     color: black;
 }
 
-li {
+li { /*TODO better name*/
     font-size: 20px;
 }
 
-li:hover {
+li:hover { /*TODO better name*/
     background-color: #b3ccff;
 }
+
+/* Uplooad form css*/
 
 /* The Modal (background) */
 .modal {
@@ -185,8 +175,7 @@ li:hover {
     /* Black w/ opacity */
 }
 
-/* Modal Content/Box */
-.modal-content {
+.modal-content { /* Modal Content/Box */
     background-color: #fefefe;
     margin: 15% auto;
     /* 15% from the top and centered */
@@ -196,8 +185,7 @@ li:hover {
     box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), 0 4px 6px rgba(0,0,0,0.45);
 }
 
-/* The Close Button */
-.close {
+.close { /* The Close Button */
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -234,8 +222,17 @@ li:hover {
     border-radius: 15px 50px;
 }
 
-
-
 #guide_title:hover,#guide_location:hover,#guide_description:hover{
     background-color: #dbf3fa;
+}
+/* End og Uplooad form css*/
+
+footer {
+    height: 10vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Times New Roman';
 }

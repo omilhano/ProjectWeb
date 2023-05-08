@@ -26,9 +26,9 @@ body {
   justify-content: space-between;
   box-shadow: 0 4px 2px -2px gray;
 }
-  .container{
-    padding-top: 50px; /*por causa da navbar estar sticky e com height 49px*/
-  }
+.container{
+  padding-top: 50px; /*por causa da navbar estar sticky e com height 49px*/
+}
 
 
 .login{
