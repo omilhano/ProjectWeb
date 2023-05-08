@@ -12,8 +12,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js" integrity="sha512-lvcHFfj/075LnEasZKOkj1MF6aLlWtmpFEyd/Kc+waRnlulG5er/2fEBA5DBff4BZrcwfvnft0PiAv4cIpkjpw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI1eO1w2j3bWV_m0D4TwP9zw8TzcmVgCc"></script>
  
-    <!-- Load of the Javascript File -->
-    <script src="HomePageJS.js"></script>
+    <script>
+        $(document).ready(function(){   
+          $(".dropdown").superfish();
+     });    
+    </script>
 </head>
 <body>
       <!-- creating a navbar on top of page -->
@@ -100,5 +103,6 @@
     <footer>
       <p>Web Development 2023</p>
     </footer>
+    <script src="HomePageJS.js"></script>
 </body>
 </html>
