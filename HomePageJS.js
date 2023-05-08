@@ -1,4 +1,4 @@
-     $(".slideshow").cycle({fx:"scrollHorz"}); //adiciona efeito de scroll horizontal para a esquerda
+ $(".slideshow").cycle({fx:"scrollHorz"}); //adiciona efeito de scroll horizontal para a esquerda
 
      $(document).ready(function() {
           $(".slideshow").cycle();
