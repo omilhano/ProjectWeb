@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+.col-md-4{
+    background-color: #5494da;
+    border-radius: 2%;
+}
+
 body {
     /*width: 100%;needless?*/
     margin: 0 auto;
@@ -30,8 +35,18 @@ body {
     height: 0.1px;
     opacity: 0;
     overflow: hidden;
-    position: absolute;
-    z-index: -1;
+    position: relative;
+}
+#delete_button {
+    opacity: 1;
+    position: relative;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: teal;
+    border-radius: 12px;
+    border: none; 
+    float: right;   
 }
 
 .inputfile+label {
@@ -40,9 +55,8 @@ body {
     color: white;
     background-color: teal;
     margin:auto;
-    padding: 2px;
-    border-radius: 15px;
-    display: inline-block;
+    border-radius: 12px;
+    float: left;
     cursor: pointer;
 }
 
@@ -51,20 +65,7 @@ body {
     background-color: lightskyblue;
 }
 
-#delete_button {
-    opacity: 1;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-    font-size: 1.25em;
-    font-weight: 700;
-    color: white;
-    background-color: teal;
-    border-radius: 12px;
-    border: none;    
-    display: block;
-    margin: auto;
-}
+
 
 #delete_button:hover {
     background-color: lightskyblue;

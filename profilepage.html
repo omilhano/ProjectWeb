@@ -91,12 +91,13 @@
                 <h4>Number of Votes (TODO)</h4>
                 <h4>Number of followers (TODO)</h4>
                 <h5>Upload your Guide:</h5>
-                <form id="upload" action="/action_page.php">
-                    <input type="file" name="file" id="file" class="inputfile" />
-                    <label for="file">Upload a Guide</label>
-                </form>
-                <br>
-                <button id="delete_button">Delete your Guide</button>
+                <div class="files">
+                    <form id="upload" action="/action_page.php">
+                        <input type="file" name="file" id="file" class="inputfile" onchange="form_submit()" />
+                        <label for="file">Upload a Guide</label>
+                        <button id="delete_button">Delete your Guide</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
