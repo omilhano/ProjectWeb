@@ -1,8 +1,3 @@
-     $(document).ready(function(){   
-          $(".dropdown").superfish();
-     });    
-
-
      $(".slideshow").cycle({fx:"scrollHorz"}); //adiciona efeito de scroll horizontal para a esquerda
 
      $(document).ready(function() {
