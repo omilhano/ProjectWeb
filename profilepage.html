@@ -55,7 +55,7 @@
                     <a class="nav-link" href="https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran">Contact
                         Us</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <div id="menu" class="nav-link">
                         Log In
                         <ul style="background-color: #e3f2fd;">
@@ -73,7 +73,7 @@
                             <a href="Register_Page.html">Dont have an account register here</a>
                         </ul>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
     </nav>
@@ -104,11 +104,17 @@
                                 <span class="upload_form">Upload Form</span>
                             </div>
                             <div class="modal_body">
-                                <div class="formbox"><input type="text" id="guide_title" placeholder="Insert Title..."></div><!-- has to be inside div -->
-                                <div class="formbox"><input type="text" id="guide_location" placeholder="Insert Location..."></div>
-                                <div class="formbox"><input type="text" id="guide_description" placeholder="Insert Description..."></div>   
-                                <!-- temos que ver com o stor o que meter mais -->
-                                <button type="submit" class="submit_button">Submit Guide</button>
+                                <form action="/action.php">
+                                    <div class="formbox"><input type="text" id="guide_title"
+                                            placeholder="Insert Title..." required></div><!-- has to be inside div -->
+                                    <div class="formbox"><input type="text" id="guide_location"
+                                            placeholder="Insert Location..." required></div>
+                                    <div class="formbox"><input type="text" id="guide_description"
+                                            placeholder="Insert Description..." required></div>
+                                    <!-- temos que ver com o stor o que meter mais -->
+                                    <div class="formbox"><input type="file"></div>
+                                    <button type="submit" class="submit_button">Submit Guide</button>
+                                </form>
                             </div>
                         </div>
                     </div>
