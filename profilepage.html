@@ -39,7 +39,7 @@
         </button>
         <div class="navbar-collapse collapse" id="navbarNavDropdown">
             <ul class="navbar-nav nav-fill w-100">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="Introduction.html">Introduction</a>
                 </li>
                 <li class="nav-item">
@@ -55,25 +55,7 @@
                     <a class="nav-link" href="https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran">Contact
                         Us</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <div id="menu" class="nav-link">
-                        Log In
-                        <ul style="background-color: #e3f2fd;">
-                            <span>Username:</span>
-                            <br>
-                            <input type="text">
-                            <br>
-                            <span>Password:</span>
-                            <br>
-                            <input type="text">
-                            <br>
-                            <br>
-                            <input type="submit" value="submit">
-                            <br>
-                            <a href="Register_Page.html">Dont have an account register here</a>
-                        </ul>
-                    </div>
-                </li> -->
+               
             </ul>
         </div>
     </nav>
@@ -92,10 +74,7 @@
                 <h4>Number of followers (TODO)</h4>
                 <h5>Upload your Guide:</h5>
                 <div class="files">
-                    <!-- <form id="upload" action="/action_page.php">  -->
-                    <!-- <input type="file" name="file" id="file" class="inputfile"/>
-                        <label for="file">Upload a Guide</label> -->
-                    <button id="guide_upload" name="file" class="inputfile">Upload Guide</button>
+                    <button id="guide_upload" name="file" ">Upload Guide</button>
                     <button id="delete_button">Delete your Guide</button>
                     <div id="file_modal" class="modal">
                         <div class="modal-content">
@@ -105,14 +84,14 @@
                             </div>
                             <div class="modal_body">
                                 <form action="/action.php">
-                                    <div class="formbox"><input type="text" id="guide_title"
+                                    <div class="inputbox"><input type="text" id="guide_title"
                                             placeholder="Insert Title..." required></div><!-- has to be inside div -->
-                                    <div class="formbox"><input type="text" id="guide_location"
+                                    <div class="inputbox"><input type="text" id="guide_location"
                                             placeholder="Insert Location..." required></div>
-                                    <div class="formbox"><input type="text" id="guide_description"
+                                    <div class="inputbox"><input type="text" id="guide_description"
                                             placeholder="Insert Description..." required></div>
-                                    <!-- temos que ver com o stor o que meter mais -->
-                                    <div class="formbox"><input type="file"></div>
+                                    <!--  TODO temos que ver com o stor o que meter mais -->
+                                    <div class="inputbox"><input type="file" class="file_upload"></div>
                                     <button type="submit" class="submit_button">Submit Guide</button>
                                 </form>
                             </div>
@@ -153,5 +132,4 @@
         }
     </script>
 </body>
-
 </html>
