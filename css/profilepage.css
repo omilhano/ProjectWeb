@@ -30,6 +30,7 @@
     /* text of items in nav bar*/
     font-family: Arial, Helvetica, sans-serif;
     color: black;
+    height: 49px;
 }
 .nav-item {
     font-size: 20px;
