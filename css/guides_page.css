@@ -67,7 +67,7 @@ li:hover {
 }
 .image_wrapper {
   position: relative;
-  max-width: 350px;
+  max-width: 100%;
 }
 img {
   object-fit: cover;
