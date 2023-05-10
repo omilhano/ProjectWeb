@@ -11,13 +11,11 @@
 /*end of bootstrap cointainer*/
 
 /* start of navbar*/
-
 /* TODO this will be used for icon
 .navbar-brand { 
     padding-left: 15px;
 
 } */
-
 .navbar {
     height: 49px;
 }
@@ -38,9 +36,7 @@
 .nav-item:hover {
     background-color: #b3ccff;
 }
-
 /* end of navbar*/
-
 body {
     margin: 0 auto;
     background: lightblue;
@@ -48,7 +44,6 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
 }
-
 /*start of user profile*/
 #profile_pic {
     display: block;

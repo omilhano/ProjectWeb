@@ -1,39 +1,40 @@
+/*start of bootstrap cointainer*/
+.container {
+  width: 80%;
+  background-color: #e2f1f7;
+  padding-top: 50px;
+  /*por causa da navbar estar sticky e com height 49px*/
+}
+/*end of bootstrap cointainer*/
 body {
   margin: 0 auto;
   background: lightblue;
   height: 100%;
   overflow-x: hidden;
 }
-
-
-.container {
-  width: 80%;
-  background-color: #e2f1f7;
-}
-
+/* start of navbar*/
 .navbar-brand {
   height: 49px; 
 }
-
 .navbar {
   height: 49px;
 }
-
 .navbar-nav {
   display: flex;
   justify-content: space-between;
 }
-
-.container {
-  padding-top: 50px;
-  /*por causa da navbar estar sticky e com height 49px*/
+#menu:hover ul {
+  display: block;
 }
-
-
-.login {
-  padding-right: 20px;
+#menu ul li {
+  display: block;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1.5;
 }
-
+#menu ul li:hover {
+  background-color: #b3ccff;
+}
 #menu ul {
   display: none;
   position: absolute;
@@ -49,45 +50,25 @@ body {
   min-width: 20%;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
-
-#menu:hover ul {
-  display: block;
-}
-
-#menu ul li {
-  display: block;
-  padding: 8px 12px;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-#menu ul li:hover {
-  background-color: #b3ccff;
-}
-
-.navbar-nav .dropdown-menu {
-  z-index: 9999;
-}
-
 .nav-link {
   font-family: Arial, Helvetica, sans-serif;
   color: black;
   height: 49px;
 }
-
+/* end of navbar*/
+.login {
+  padding-right: 20px;
+}
 li {
   font-size: 20px;
 }
-
 li:hover {
   background-color: #b3ccff;
 }
-
 .image_wrapper {
   position: relative;
   max-width: 350px;
 }
-
 img {
   object-fit: cover;
   width: 100%;
@@ -96,14 +77,11 @@ img {
   filter: brightness(100%);
   transition: filter
 }
-
-
 .guide_name {
   display: block;
   margin: 0;
   font-size: 1.5rem;
 }
-
 .guide_description {
   display: block;
   margin: 0;
