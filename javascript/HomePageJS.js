@@ -1,4 +1,4 @@
-  $(".slideshow").cycle({fx:"scrollHorz"}); //adiciona efeito de scroll horizontal para a esquerda
+ $(".slideshow").cycle({fx:"scrollHorz"}); //adiciona efeito de scroll horizontal para a esquerda
 
      $(document).ready(function() {
           $(".slideshow").cycle();
@@ -101,3 +101,14 @@ function checkPassword() {
         errorElement.textContent = "Incorrect password. Please try again.";
     }
 }
+// This part removes the text from the modal when it gets closed
+$('#password-error').text('');
+
+$(".close").click(function() {
+    $('#password-error').text('');
+    $("#file_modal").css("display", "none");
+});
+document.getElementById("close-modal").addEventListener("click", function() {
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+});
