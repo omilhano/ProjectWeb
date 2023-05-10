@@ -1,37 +1,37 @@
-/*start of bootstrap cointainer*/
-.container {
-  padding-top: 50px; /*por causa da navbar estar sticky e com height 49px*/
-  width: 80%;
-  background-color: #e2f1f7;
-  border: 3px solid rgba(0, 0, 0, 0.45);
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 4px 6px rgba(0, 0, 0, 0.45);
-}
-/*end of bootstrap cointainer*/
 body {
   margin: 0 auto;
   background: lightblue;
   height: 100%;
   overflow-x: hidden;
 }
-/* start of navbar*/
-/* TODO this will be used for icon
-.navbar-brand { 
-    padding-left: 15px;
 
-} */
+
+.container {
+  width: 80%;
+  background-color: #e2f1f7;
+  /*border: 3px solid rgba(0, 0, 0, 0.45);*/
+  /*box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 4px 6px rgba(0, 0, 0, 0.45);*/
+}
+
+.navbar-brand {
+  height: 46px;
+}
+
 .navbar {
   height: 49px;
 }
+
 .navbar-nav {
   display: flex;
   justify-content: space-between;
-  box-shadow: 0 4px 2px -2px gray;
+  /*box-shadow: 0 4px 2px -2px gray;*/
 }
-.nav-link {
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
+
+.container {
+  padding-top: 50px;
+  /*por causa da navbar estar sticky e com height 49px*/
 }
-/* end of navbar*/
+
 
 .login {
   padding-right: 20px;
@@ -67,16 +67,30 @@ body {
 #menu ul li:hover {
   background-color: #b3ccff;
 }
+
+.navbar-nav .dropdown-menu {
+  z-index: 9999;
+}
+
+.nav-link {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  height: 49px;
+}
+
 li {
   font-size: 20px;
 }
+
 li:hover {
   background-color: #b3ccff;
 }
+
 .image_wrapper {
   position: relative;
   max-width: 350px;
 }
+
 img {
   object-fit: cover;
   width: 100%;
@@ -85,11 +99,14 @@ img {
   filter: brightness(100%);
   transition: filter
 }
+
+
 .guide_name {
   display: block;
   margin: 0;
   font-size: 1.5rem;
 }
+
 .guide_description {
   display: block;
   margin: 0;
