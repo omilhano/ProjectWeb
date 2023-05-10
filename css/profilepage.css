@@ -4,12 +4,10 @@
     padding: 0;
     height: 85vh;
 }
-
 .col-md-4 {
     background-color: #5494da;
     border-radius: 2%;
 }
-
 /*end of bootstrap cointainer*/
 
 /* start of navbar*/
@@ -23,23 +21,19 @@
 .navbar {
     height: 49px;
 }
-
 .navbar-nav {
     /* navigation of navbar*/
     display: flex;
     justify-content: space-between;
 }
-
 .nav-link {
     /* text of items in nav bar*/
     font-family: Arial, Helvetica, sans-serif;
     color: black;
 }
-
 .nav-item {
     font-size: 20px;
 }
-
 .nav-item:hover {
     background-color: #b3ccff;
 }
