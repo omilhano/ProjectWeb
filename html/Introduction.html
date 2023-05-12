@@ -1,221 +1,234 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.10/css/superfish.css" integrity="sha512-DpU2gnU7xMR66lBmOUC4C/8+y0EZ6PTO1uu0pI0VYqDfH166SMbw99FCM6Kt/k2gLBuAMtmAsK1myd5xYtPLaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> <!-- CDN summon jquery -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.10/js/superfish.min.js" integrity="sha512-gdhtclwUZCkHSSb/Q79++RssWL4eDLKHO15TC7kR/XnvlNyzcvZDRLn4BIuxadMWGIxPuj/IbFBInMpYockVCA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.hoverintent/1.10.2/jquery.hoverIntent.min.js" integrity="sha512-sw+oNcbTS/A0W2RCoTKChyNVw/OClp76mxn3yaOZiDaxpGMXFIWrZC6BlgtieaWp2oh2asgj44TJd1f4Lz2C8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js"></script>
-    <style>
-        
-        html, body {
-                height: 100%;
-            }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <title>Turistic</title>
+    <link rel="stylesheet" href="Introduction.css">
+    <link rel="stylesheet" href="HomePage.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js" integrity="sha512-lvcHFfj/075LnEasZKOkj1MF6aLlWtmpFEyd/Kc+waRnlulG5er/2fEBA5DBff4BZrcwfvnft0PiAv4cIpkjpw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI1eO1w2j3bWV_m0D4TwP9zw8TzcmVgCc"></script>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        
-        header, main, footer, .maincenter{
-                font-family: Arial, Helvetica, sans-serif; 
-                width: 100%;
-                margin: 0 auto;
+ 
+    <script>
+        $(document).ready(function(){   
+          $(".dropdown").superfish();
+     });    
+    </script>
 
-
-            }
-            body{			
-                width: 100%;
-                margin: 0 auto;
-                background: lightblue;
-                height: 100%;
-                overflow-y: hidden;
-                overflow-x: hidden;
-                
-            }  
-            
-
-            header{
-                z-index: 999;
-            }
-
-            .headerleft{
-                float: left;
-                width: 80%;
-                background-color: red;
-            }
-            
-            .sf-menu a {
-                border-left: 1px solid black;
-                color: black;
-
-            }
-
-            .sf-menu li {
-                background:red;
-                padding-left: 0px;
-            }
-
-            .headerright{
-                width: 20%;
-                float: right;
-                background-color: yellow;
-            
-            }
-
-            footer{
-                position: fixed;
-                bottom: 0; left: 0; right: 0;
-                text-align: center;
-                padding: 10px;
-                font-family: 'Times New Roman';
-            }
-
-            #flex {
-            display: flex; 
-            justify-content: space-between;
-            align-items: top;
-            }
-
-            .clearfix::after {
-                content: "";
-                clear: both;
-                display: table;
-            }
-
-        .container{
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(6, 1fr);
-            height: 100%;
-        }
-
-        .item-mainleft{
-            grid-row: 3;
-            grid-column: 1/2;
-            position: relative;
-            top: 15%;
-            left: 120%; 
-            transform: translate(-50%, 0); 
-        }
-
-        .item-maincenter{
-            grid-row: 3;
-            grid-column: 3/4;
-            position: fixed;
-            bottom: 50%;
-            left: 50%;
-            transform: translate(-50%, 50%);
-            font-weight: bold;
-            font-size: larger;
-            text-align: center;
-        }
-
-        .item-mainright{
-            grid-row: 3;
-            grid-column: 5/6;
-            position: relative;
-            left: 70%;
-            bottom: 2%
-        }
-
-    </style>
-    </head>
-    <body class = "clearfix">
-    
-        <script>
-            $(document).ready(function(){
-                $(".dropdown").superfish();
-            });    
-        </script>
-
-        <header id="flex">
-            <div class="headerleft">
-            <div id="menu" class="sf-menu" >
-                <li style="background-color: red;"><a href="Skelly.html" id = "letter">ADVISING UR TRIPS BRELSON</a>
-                    <ul>
-                        <li style="background-color: red;"><a href="Introductio(Grid)n.html">Introduction</a></li>
-                        <li style="background-color: red;"><a href="#">List of Guides</a></li>
-                        <li style="background-color: red;"><a href="#">Social Features</a></li>
-                        <li style="background-color: red;"><a href="Profile_Page.html">Profile Page</a></li>
-                        <li style="background-color: red;"><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran">Contact Us</a></li>
-                    </ul>
-                </li>
-            </div>     
-            </div>       
-
-            <div class="headerright">
-                <div id="menu" class="sf-menu" >
-                    <li style="background-color: yellow;"><a href="#">PROFILE</a>
-                        <ul>
-                            <li style="background-color: yellow;"><a href="#">My Account</a></li>
-                            <li style="background-color: yellow;"><a href="#">My Guides</a></li>
-                            <li style="background-color: yellow;"><a href="#">My Network</a></li>
-                        </ul>
+</head>
+<body>
+      <!-- creating a navbar on top of page -->
+      <nav class="navbar navbar-expand-md fixed-top" id="navbar-expand-md" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a class="navbar-brand abs" href="HomePage.html">Navbar 1</a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="collapseNavbar">
+                <ul class="navbar-nav nav-fill">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="guides_page.html">List Of Guides</a>
                     </li>
-                </div>  
+                    <li class="nav-item">
+                        <a class="nav-link" href="//codeply.com">Social Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profilepage.html">Profile Page</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <button id="login-button" name="logbutton" class="nav-link">Login</button>
+                        <div id="file_modal" class="modal">
+                            <div class="modal-content">
+                                <div class="modal_header" style="padding-bottom: 10px;">
+                                    <span id="close-modal" class="close">&times;</span>  
+                                    <span>Access your Account</span>
+                                </div>
+                                <div class="modal_body">
+                                    <div class="formbox"><input type="text" id="username" placeholder="Username"></div>
+                                    <div class="formbox" style="padding-top: 5px;"><input type="password" id="password" placeholder="Password"><div id="password-error" style="color: red;"></div></div><br>
+                                    <button type="submit" class="submit_button" onclick="checkPassword();">Log in </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="border rounded-2 bg-primary">
+                            <a href="Register_Page.html" class="nav-link">Register here &rarr;</a>
+                        </div>
+                        
+                    </li>
+                </ul>
             </div>
-        </header>
-        
-        <grid class = "container">
-            <main id="flex" class = "item item-mainleft">
-                <div>
-                    <div class="slideshow" data-cycle-slides="> div">
-                        <div>
-                            <img src="../photos/Axel.jpg" style = "width: 120%; height: 120%;">
-                        </div>
-                        <div>
-                            <img src="../photos/Elai.jpg" style = "width: 120%; height: 120%;; position:relative; top: 40px">
-                        </div>
-                        <div>
-                            <img src="../photos/Guirelhme.jpg" style = "width: 120%; height: 120%;">
-                        </div>
-                        <div>
-                            <img src="../photos/Mi.jpg" style = "width: 120%; height: 120%;">
-                        </div>
+        </div>
+    </nav>
+
+<!--MAIN  ->  POR ACABAR: (centrar tudo quando height aumenta, ajustar localização dos containers em tablet e mobile)--> 
+  <div class="container">
+    <div class="row">
+        <div class = "title" style = "text-align: center;">Our Team</div> 
+        </div>
+    </div>
+    <nav>
+        <div class="container">
+            <div class="row">
+              <!--Alex-->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class = "border rounded shadow bg-secondary-subtle custom1" style="height: 150%"> 
+                      <!--Profile-->  
+                      <img src = "Axel.jpg" class = "img1" style = "position: relative; left: 30%; top: 15%">
+                        <p class = "names" style = "text-align: center; position: relative; top: 20%">Alexandre Francisco <br> nº 20221512</p>
+                        <!--Icons-->
+                        <div class = icons class = "dropdown">
+                            <a href="https://www.linkedin.com/in/alexandremvfrancisco/" target = "_blank" class = "no-underline" id="icon-no-line" style = "position: relative; right: 3%">
+                            <img src="Linkedin.jpg" class = "rounded-2" lt="Linkedin Profile" style = "width: 15%">
+                          </a>
+
+                            <a href="#" class = "no-underline" class="btn btn-default dropdown-toggle" id="icon-no-line" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                              <img src="Email.png" class = "dropdown rounded-2" lt="Gmail" style = "width: 20%">
+                            </a>
+                            <!--Dropdown email-->
+                            <div class="dropdown-menu" id="dropdown-box">
+                                <p id = "email-copy1" style="text-align: center;">20221512@novaims.unl.pt</p>
+                                <button id="copy-button1" class="border rounded border border-dark-subtle">Copy</button>
+                            </div>
+
+                          <a href= "https://www.instagram.com/omilhas_/" class = "no-underline" style = "position: relative; left: 3%" target = "_blank">
+                            <img src="Insta.jpg" class = "rounded-2" lt="Instagram" style = "width: 15%">
+                          </a>
+                      </div>
                     </div>
                 </div>
-            </main>
+              <!--Eli-->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class = "border rounded shadow bg-secondary-subtle custom2" style="height: 150%"> 
+                      <!--Profile-->   
+                      <img src = "Elai.jpg" class = "img2" style = "position: relative; left: 30%; top: 20%">
+                        <p class = "names"  style = "text-align: center; position: relative; top: 30%;">Eli Godinho <br> nº 20221781</p>
+                        <!--Icons-->
+                        <div class = icons style = "position: relative; top: 34%">
+                          <a href="https://www.linkedin.com/in/eli-godinho/" target = "_blank" id="icon-no-line" class = "no-underline" style = "position: relative; right: 3%">
+                            <img src="Linkedin.jpg" class = "rounded-2" lt="Linkedin Profile" style = "width: 15%">
+                          </a>
 
-            
-            <div  id = "flex" class = "item item-maincenter">
-                <div class="slideshow" data-cycle-slides="> div">
-                    <div>
-                        Alexandre Francisco <br> <br> nº 20221512
+                          <a href="#" class = "no-underline" class="btn btn-default dropdown-toggle" id="icon-no-line" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <img src="Email.png" class = "dropdown rounded-2" lt="Gmail" style = "width: 20%">
+                          </a>
+                          <!--Dropdown email-->
+                          <div class="dropdown-menu" id="dropdown-box">
+                              <p id = "email-copy2" style="text-align: center;">20221781@novaims.unl.pt</p>
+                              <button id="copy-button2" class="border rounded border border-dark-subtle">Copy</button>
+                          </div>
+
+                          <a href= "https://www.instagram.com/cyref_/" class = "no-underline" style = "position: relative; left: 3%" target = "_blank">
+                            <img src="Insta.jpg" class = "rounded-2" lt="Instagram" style = "width: 15%">
+                          </a>
+                      </div>
                     </div>
-                    <div>
-                        <div style = "position: relative; left: 35%">
-                            Eli Godinho <br> <br> nº 20221781
+                </div>
+                <!--Gui-->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class = "border rounded shadow bg-secondary-subtle custom3"  style="height: 150%"> 
+                          <!--Profile-->   
+                          <img src = "Guirelhme.jpg" class = "img3" style = "position: relative; left: 30%; top: 15%">
+                            <p class = "names"  style = "text-align: center; position: relative; top: 21%">Guilherme Marques <br> nº 20221780</p>
+                            <!--Icons-->
+                            <div class = icons>
+                                <a href="https://www.linkedin.com/in/guilherme-alves-marques-08b36b245/" target = "_blank" id="icon-no-line" class = "no-underline" style = "position: relative; right: 3%">
+                                  <img src="Linkedin.jpg" class = "rounded-2" lt="Linkedin Profile" style = "width: 15%">
+                                </a>
+      
+                                <a href="#" class = "no-underline" class="btn btn-default dropdown-toggle" id="icon-no-line" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <img src="Email.png" class = "dropdown rounded-2" lt="Gmail" style = "width: 20%">
+                                  </a>
+                                  <!--Dropdown email-->
+                                  <div class="dropdown-menu" id="dropdown-box">
+                                      <p id = "email-copy3" style="text-align: center;">20221780@novaims.unl.pt</p>
+                                      <button id="copy-button3" class="border rounded border border-dark-subtle">Copy</button>
+                                  </div>
+      
+                                <a href= "https://www.instagram.com/lord_katsumoto_/" class = "no-underline" style = "position: relative; left: 3%" target = "_blank">
+                                  <img src="Insta.jpg" class = "rounded-2" lt="Instagram" style = "width: 15%">
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                        <div>
-                            Guilherme Marques <br> <br> nº 20221780
-                        </div>
-                    <div>
-                        <div style = "position: relative; left: 23%">
-                            Rafael Ribeiro <br> <br> nº 20221853
-                        </div>
+                </div>
+                <!--Rafa-->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class = "border rounded shadow bg-secondary-subtle custom4" style="height: 150%"> 
+                      <!--Profile--> 
+                      <img src = "Ralafel.jpg" class = "img4" style = "position: relative; left: 30%; top: 15%">
+                        <p class = "names" style = "text-align: center; position: relative; top: 23%">Rafael Ribeiro <br> nº 20221853</p>
+                        <!--Icons-->
+                        <div class = icons style = "position: relative; top: 27%">
+                          <a href="https://www.linkedin.com/in/rafael-es-ribeiro/" target = "_blank" id="icon-no-line" class = "no-underline" style = "position: relative; right: 3%">
+                            <img src="Linkedin.jpg" class = "rounded-2" lt="Linkedin Profile" style = "width: 15%">
+                          </a>
+
+                          <a href="#" class = "no-underline" class="btn btn-default dropdown-toggle" id="icon-no-line" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <img src="Email.png" class = "dropdown rounded-2" lt="Gmail" style = "width: 20%">
+                          </a>
+                          <!--Dropdown email-->
+                          <div class="dropdown-menu" id="dropdown-box">
+                              <p id = "email-copy4" style="text-align: center;">20221853@novaims.unl.pt</p>
+                              <button id="copy-button4" class="border rounded border border-dark-subtle">Copy</button>
+                          </div>
+
+                          <a href= "https://www.instagram.com/rafaesr4/" class = "no-underline" style = "position: relative; left: 3%" target = "_blank">
+                            <img src="Insta.jpg" class = "rounded-2" lt="Instagram" style = "width: 15%">
+                          </a>
+                      </div>
                     </div>
                 </div>
             </div>
-            
-        
+        </div>
+      </nav>
 
-            <div class = "item item-mainright">
-                <div>
-                    <img src="../photos/Grupo OB.jfif" style = "width: 120%; height: 120%">
-                </div>
-            </div>   
-        </grid>
-        
-        <footer>
-            <p style="color: gold;">Web Development 2023</p>
-        </footer>
-        
-        <script>
-            $(document).ready(function() {
-                $(".slideshow").cycle();
-            });
-        </script>
-    </body>
-    </html>
+  <footer>
+    <p>Web Development 2023</p>
+  </footer>
+  
+  <script>
+    //email copy paste for each member
+    $(document).ready(function() {
+      $('.dropdown-toggle').dropdown();
+    });
+
+    const copyButton1 = document.getElementById('copy-button1');
+    const copyButton2 = document.getElementById('copy-button2');
+    const copyButton3 = document.getElementById('copy-button3');
+    const copyButton4 = document.getElementById('copy-button4');
+
+    copyButton1.addEventListener('click', (event) => {
+        const content = document.getElementById('email-copy1').textContent;
+        navigator.clipboard.writeText(content);
+    })
+
+    copyButton2.addEventListener('click', (event) => {
+        const content = document.getElementById('email-copy2').textContent;
+        navigator.clipboard.writeText(content);
+    })
+    copyButton3.addEventListener('click', (event) => {
+        const content = document.getElementById('email-copy3').textContent;
+        navigator.clipboard.writeText(content);
+    })
+    copyButton4.addEventListener('click', (event) => {
+        const content = document.getElementById('email-copy4').textContent;
+        navigator.clipboard.writeText(content);
+    })
+  
+   src="HomePageJS.js"
+ 
+ </script>
+</body>
+</html>
