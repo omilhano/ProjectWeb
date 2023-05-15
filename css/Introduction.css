@@ -1,3 +1,4 @@
+
 /* MAIN */
 
   body {
@@ -13,8 +14,20 @@
   border: 1px solid black;
   }
 
+  #ourteam{
+    margin-top: 3%;
+  }
+
+  #profiles {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+  }
+
   img{
-      width: 40%
+      width: 40%;
   }
 
   .img1{
@@ -65,6 +78,7 @@
 
   #icon-no-line{
     text-decoration: none;
+    z-index: 2;
   }
 
   .names::first-line{
@@ -79,21 +93,22 @@
     font-size: 35px;
   }
 
-  #dropdown-content {
-    display: none;
-  }
-
-  #dropdown-box {
-    width: 100%;
-    position: absolute;
-    top: 200%
-  }
-
   #email-copy1, #email-copy2, #email-copy3, #email-copy4{
     margin-top: 7px;
   }
 
   #copy-button1, #copy-button2, #copy-button3, #copy-button4 {
-    margin-left: 40%;
+    width: auto;
+    margin-left: 35%; 
   }
+
+  #mail{
+    z-index: 1;
+  }
+ 
+
+
+
+
+
 
