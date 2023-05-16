@@ -1,0 +1,122 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{ /* *{} is a universal selector that targets all elements on the page */
+    margin: 0;
+    padding: 0; /*margin: 0 and padding: 0, remove any default margins and paddings applied by the browser.*/
+    box-sizing: border-box; /* box-sizing: border-box, ensures that the specified width and height properties include the content, padding, and border of the element, rather than being affected by additional spacing.*/
+}
+
+html{
+    height: 100%;
+}
+
+.footer{
+    margin-top: 0;
+    background-color: #24262b;
+    padding: 70px 0;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-footer{
+    max-width: 1170px;
+    margin:auto;
+}
+
+.row-footer{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+ol{
+    list-style: none;
+    position: relative;
+    right: 12%;
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 15px
+}
+
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+/*half line to the tittle*/
+.footer-col h4::before{ 
+    content:''; /*specifies content used in ::before and ::after (aka pseudo-elements)*/
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ol .f:not(:last-child){
+    margin-bottom: 15px;
+}
+
+.footer-col ol .f a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display:block;
+    transition: all 0.3s ease; 
+    /*
+    transition, does smooth transition
+    all, to all elements
+    0.3 ease, duration of 0.3 seconds with easing function (start- slow, middle-fast, end-slow)
+    */
+}
+
+.footer-col ol .f a:hover{ 
+    color: #ffffff;
+    padding-left: 10px; /*applies transition when hovering, moving the element 10px to the right*/
+}
+
+.footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2); /*aka #FFFFFF33*/
+    /*This type of color setting is used due change the opacity od teh color, due to its "alpha" propertie.*/
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius:50%;
+    color: #ffffff;
+    transition: all 0.5 ease;
+}
+
+.footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+/*Responsive*/
+
+@media(max-width: 767px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }   
+}
+
+@media(max-width: 574px){
+    .footer-col{
+        width: 100%;
+    }   
+}
