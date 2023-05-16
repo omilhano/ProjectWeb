@@ -1,11 +1,17 @@
 
+
 /* MAIN */
 
   body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden
+  min-height: 100%;
+  display: flex;
+  flex-direction: column; 
   }
+
+  #ourteam{
+    width: 85%
+  } 
+
   .row {
   margin-left: 20px;
   margin-right: 20px;
@@ -14,13 +20,10 @@
   border: 1px solid black;
   }
 
-  #ourteam{
-    margin-top: 3%;
-  }
-
   #profiles {
-    position: fixed;
-    top: 40%;
+    position: relative;
+    margin-top: 22%;
+    padding-bottom: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
   
@@ -91,6 +94,7 @@
     font-family: 'Nunito';
     font-weight: bold;
     font-size: 35px;
+    padding-top: 5%;
   }
 
   #email-copy1, #email-copy2, #email-copy3, #email-copy4{
@@ -106,6 +110,9 @@
     z-index: 1;
   }
  
+
+
+
 
 
 
