@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
+    <link rel = "stylesheet" href="../css/navbar.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    
+</head>
+<body>
+    
+    <header>
+        <a href = "HomePage.html" class = "nav_logo"><img src = "../img/logo1.png"></a>
+    
+        <ul class = "navbar">
+            <li><a href = "HomePage.html" class = "active" >Home</a></li>
+            <li><a href = "guides_page.html">List of Guides</a></li>
+            <li><a href = "#">Social Features</a></li>
+            <li><a href = "profilepage.html">Profile Page</a></li>
+        </ul>
+    
+        <div class = "nav_main">
+          <a href="#" class = "user"><i class="ri-user-fill"></i>
+            <button id="login-button" name="logbutton" class="nav-link">Login</button>
+            <div id="file_modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal_header" style="padding-bottom: 10px;">
+                        <span id="close-modal" class="close">&times;</span>  
+                        <span>Access your Account</span>
+                    </div>
+                    <div class="modal_body">
+                        <div class="formbox"><input type="text" id="username" placeholder="Username"></div>
+                        <div class="formbox" style="padding-top: 5px;"><input type="password" id="password" placeholder="Password"><div id="password-error" style="color: red;"></div></div><br>
+                        <button type="submit" class="submit_button" onclick="checkPassword();">Log in </button>
+                    </div>
+                </div>
+            </div>
+          </a>
+          <a href="Register_Page.html" class = "register" style = "text-decoration: none;">Register</a>
+          <div class="bx bx-menu" id = "menu-icon"></div>
+        </div>
+    </header>
+    
+    <!--js link-->
+    <script type = "text/javascript" src = "../js/navbar.js"></script>
+</body>
+</html>
