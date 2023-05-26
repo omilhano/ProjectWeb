@@ -1,0 +1,245 @@
+/*Solve boxes padding and height for @media (max-width: 574)*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.home_header{
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
+  color: white; 
+  width: 1000%;
+}
+
+.home_main{
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: rgb(214, 211, 211); 
+  width: 1000%;
+}
+
+.guides{
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;  
+  font-weight: 500;
+  color: white; 
+  margin-top: 10rem;
+}
+
+.row{
+    padding-top: 12%;
+  }
+
+.row1{
+  opacity: 0;
+  transition: opacity 1s ease-in-out;;
+  }
+
+  .row1.active{
+    opacity: 1;
+    }
+  
+  #left, #center, #right{
+    width: 100%;
+    height: 200px;
+    border-radius: 5%;
+    border: 1px solid black;
+    margin-bottom: 10vh; /*vh para n ser "engolido" pelo footer*/
+    margin-top: -30%;
+  }
+  
+  .slideshow-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  z-index: 0;
+  }
+  
+  #left:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  filter: brightness(85%);
+  }
+  
+  #center:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  filter: brightness(85%);
+  }
+  
+  #right:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  filter: brightness(85%);
+  }
+  
+  #map{
+    height: 200px;
+    width: 100%;
+  }
+  
+ @media only screen and (max-width: 991px){
+
+  .row{
+    padding-top: 32%;
+  }
+
+  .home_header{
+  width: 40rem;
+}
+
+.home_main{
+  width: 35rem;
+}
+
+  #left, #center, #right{
+    height: 400px;
+    margin-bottom: 30vh;
+  }
+
+  #center{
+    position: relative;
+    top: 0.2rem;
+  }
+  
+  #right{
+    position: relative;
+    top: 0.4rem;
+  }
+
+  #map{
+    height: 400px;
+  }
+
+  .guides{
+    position: relative;
+    top: -3rem;
+  }
+ }
+
+ @media only screen and (max-width: 768px) and (min-width: 630px){
+
+
+    .home_header{
+    width: 35rem;
+    font-size: 3rem;
+  }
+
+  #left, #center, #right{
+    margin-bottom: 20vh;
+  }
+
+  #center{
+    position: relative;
+    top: 1rem;
+  }
+
+  #right{
+    position: relative;
+    top: 2rem;
+  }
+ }
+
+ @media only screen and (max-width: 630px) and (min-width: 534px){
+
+  .row{
+    padding-top: 35%;
+    
+  }
+
+    .home_header{
+    width: 30rem;
+    font-size: 2.5rem;
+  }
+
+  #left, #center, #right{
+    height: 350px;
+    margin-bottom: 15vh;
+  }
+
+  .home_main{
+    width: 30rem;
+  }
+
+  #center{
+    position: relative;
+    top: 2.5rem;
+  }
+
+  #right{
+    position: relative;
+    top: 5rem;
+  }
+
+  #map{
+    height: 350px;
+  }
+
+  .guides{
+    position: relative;
+    top: -1rem;
+  }
+}
+
+@media only screen and (max-width: 574px) {
+
+  body{
+    width: 100vh;
+  }
+
+  .row{
+    padding-top: 35%;
+    
+  }
+
+    .home_header{
+    width: 35rem;
+    font-size: 3.5rem;
+  }
+
+
+
+  .home_main{
+    width: 35rem;
+  }
+
+  #left, #center, #right{
+    height: 350px;
+    margin-bottom: 30vh;
+  }
+
+  #center{
+    position: relative;
+    top: 0.2rem;
+  }
+
+  #right{
+    position: relative;
+    top: 0.4rem;
+  }
+
+  .guides{
+    position: relative;
+    top: -1rem;
+  }
+}
+
+
+
+
+ 
+
+ 
+
+ 
