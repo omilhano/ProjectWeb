@@ -1,219 +1,242 @@
-.container-fluid {
-    margin: 0;
-    padding: 0;
-}
+/*Solve boxes padding and height for @media (max-width: 574)*/
 
-/* NAVIGATION BAR */
-
-.navbar-brand{
-    padding-left: 15px;
-
-}
-
-.navbar {
-    padding: 0.5rem 1rem;
-    height: 49px;
-}
-
-.navbar-nav{
-  display: flex;
-  justify-content: space-between;
-}
-
-#NovaIms{
-    width: 60px;
-    height: 60px;
-}
-.login{
-    padding-right: 20px;
-}
-
-#menu ul {
-    display: none;
-    position: absolute;
-    background-color: #b3ccff;
-    top: 100%;
-    right: 0;
-    z-index: 999;
+*{
     padding: 0;
     margin: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-top: none;
-    min-width: 20%;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
-  }
-  
-  #menu:hover ul {
-    display: block;
-  }
-  
-  #menu ul li {
-    display: block;
-    padding: 8px 12px;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  
-  #menu ul li:hover {
-    background-color: #b3ccff;
-  }
-
-  .navbar-nav .dropdown-menu {
-    z-index: 9999;
-  }
-
-.nav-link{
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-li{
-    font-size: 20px;
-}
 
-li:hover{
-    background-color: #b3ccff;
-}
 
-/* LOG IN */
-
-.modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0);
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  /* 15% from the top and centered */
-  padding: 20px;
-  max-width: 400px;
-  /* Could be more or less, depending on screen size */
-  box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), 0 4px 6px rgba(0,0,0,0.45);
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  width: 20px;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
+.home_header{
   text-decoration: none;
-  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
+  color: white; 
+  width: 1000%;
 }
 
-.modal_body{
-  display: block;
+.home_main{
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: rgb(214, 211, 211); 
+  width: 1000%;
 }
 
-.formbox{
-  margin-bottom: 10px;
+.guides{
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;  
+  font-weight: 500;
+  color: white; 
+  margin-top: 10rem;
 }
-
-/* REGISTER */
-
-.register{
-background-color: lightblue;
-border-radius: 5%;
-}
-
-/*---------------------------*/
 
 .row{
-    padding-top: 50px;
-}
+    padding-top: 12%;
+  }
 
-.col-md-12{
-    padding-top: 100px;
-}
+.row1{
+  opacity: 0;
+  transition: opacity 1s ease-in-out;;
+  }
 
-#left, #center, #right{
+  .row1.active{
+    opacity: 1;
+    }
+  
+  #left, #center, #right{
     width: 100%;
     height: 200px;
     border-radius: 5%;
     border: 1px solid black;
+    margin-bottom: 10vh; /*vh para n ser "engolido" pelo footer*/
+    margin-top: -30%;
   }
-
-.slideshow-container {
+  
+  .slideshow-container {
   position: relative;
   display: flex;
   justify-content: center;
   padding-top: 15px;
   z-index: 0;
-}
-
-#left:hover {
+  }
+  
+  #left:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
   filter: brightness(85%);
-}
-
-#center:hover {
+  }
+  
+  #center:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
   filter: brightness(85%);
-}
-
-#right:hover {
+  }
+  
+  #right:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
   filter: brightness(85%);
-}
-
-#map{
+  }
+  
+  #map{
     height: 200px;
     width: 100%;
-}
-
- /* FOOTER */
-
-
-footer{
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    text-align: center;
-    padding: 10px;
-    font-family: 'Times New Roman';    
-}
-
- /* ---------------------------------------------------------------------------------- */
-
-@media only screen and (max-width: 768px) {
-    .image-container {
-      height: 300px;
-    }
-  
-    .image-container img {
-      width: 100%;
-      height: auto;
-      position: static;
-      opacity: 1;
-    }
-  
-    .image-container img.active {
-      position: static;
-    }
   }
+  
+ @media only screen and (max-width: 991px){
+
+  .row{
+    padding-top: 32%;
+  }
+
+  .home_header{
+  width: 40rem;
+}
+
+.home_main{
+  width: 35rem;
+}
+
+  #left, #center, #right{
+    height: 400px;
+    margin-bottom: 30vh;
+  }
+
+  #center{
+    position: relative;
+    top: 0.2rem;
+  }
+  
+  #right{
+    position: relative;
+    top: 0.4rem;
+  }
+
+  #map{
+    height: 400px;
+  }
+
+  .guides{
+    position: relative;
+    top: -3rem;
+  }
+ }
+
+ @media only screen and (max-width: 768px) and (min-width: 630px){
+
+
+    .home_header{
+    width: 35rem;
+    font-size: 3rem;
+  }
+
+  #left, #center, #right{
+    margin-bottom: 20vh;
+  }
+
+  #center{
+    position: relative;
+    top: 1rem;
+  }
+
+  #right{
+    position: relative;
+    top: 2rem;
+  }
+ }
+
+ @media only screen and (max-width: 630px) and (min-width: 534px){
+
+  .row{
+    padding-top: 35%;
+    
+  }
+
+    .home_header{
+    width: 30rem;
+    font-size: 2.5rem;
+  }
+
+  #left, #center, #right{
+    height: 350px;
+    margin-bottom: 15vh;
+  }
+
+  .home_main{
+    width: 30rem;
+  }
+
+  #center{
+    position: relative;
+    top: 2.5rem;
+  }
+
+  #right{
+    position: relative;
+    top: 5rem;
+  }
+
+  #map{
+    height: 350px;
+  }
+
+  .guides{
+    position: relative;
+    top: -1rem;
+  }
+}
+
+@media only screen and (max-width: 574px) {
+
+  body{
+    width: 100vh;
+  }
+
+  .row{
+    padding-top: 35%;
+    
+  }
+
+    .home_header{
+    width: 35rem;
+    font-size: 3.5rem;
+  }
+
+
+
+  .home_main{
+    width: 35rem;
+  }
+
+  #left, #center, #right{
+    height: 350px;
+    margin-bottom: 30vh;
+  }
+
+  #center{
+    position: relative;
+    top: 0.2rem;
+  }
+
+  #right{
+    position: relative;
+    top: 0.4rem;
+  }
+
+  .guides{
+    position: relative;
+    top: -1rem;
+  }
+}
+
+ 
+
+ 
+
+ 
