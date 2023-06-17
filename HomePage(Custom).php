@@ -1,6 +1,5 @@
 <?php
 include 'db2.php';
-$viewportHeight = $_SERVER['HTTP_CLIENT_HEIGHT'] ?? ($_SERVER['HTTP_X_CLIENT_HEIGHT'] ?? ($_SERVER['HTTP_X_HEIGHT'] ?? ($_SERVER['HTTP_HEIGHT'] ?? 800)));
 ?>
 
 <!DOCTYPE html>
@@ -40,9 +39,8 @@ $viewportHeight = $_SERVER['HTTP_CLIENT_HEIGHT'] ?? ($_SERVER['HTTP_X_CLIENT_HEI
       background-blend-mode: multiply;
       background-size: cover;
       background-repeat: no-repeat;
-      min-height: 100vh;
       height: auto;
-      
+      min-height: 100vh;
       /*Se height tiver apenas 100vh, a imagem limita-se só ao tamanho do ecrã (sem scroll)*/
     }
 
@@ -142,8 +140,7 @@ $viewportHeight = $_SERVER['HTTP_CLIENT_HEIGHT'] ?? ($_SERVER['HTTP_X_CLIENT_HEI
 </head>
 
 <body>
-  <?php
-  echo '<div class="background-image">
+<div class="background-image">
     <header>
       <a href="HomePage.html" class="nav_logo"><img src="logo1.png"></a>
 
@@ -189,7 +186,6 @@ $viewportHeight = $_SERVER['HTTP_CLIENT_HEIGHT'] ?? ($_SERVER['HTTP_X_CLIENT_HEI
           <div class="guides">Guides</div>
         </div>
       </div>';
-  ?>
   <?php
   // Retrieve all guides from the guide_table
   $sql = "SELECT id_guide, username, description, starting_point, ending_point, titles
@@ -447,22 +443,6 @@ $viewportHeight = $_SERVER['HTTP_CLIENT_HEIGHT'] ?? ($_SERVER['HTTP_X_CLIENT_HEI
       var element = document.querySelector('.row1');
       element.classList.add('active');
     });
-
-    // $(document).ready(function() {
-    //   // Function to update the element's height
-    //   function updateElementHeight() {
-    //     var viewportHeight = $(window).height();
-    //     $('.backgroung-image').css('height', viewportHeight + 'px');
-    //   }
-
-    //   // Initial height update
-    //   updateElementHeight();
-
-    //   // Recalculate height on window resize
-    //   $(window).on('resize', function() {
-    //     updateElementHeight();
-    //   });
-    // });
   </script>
 
 </body>
