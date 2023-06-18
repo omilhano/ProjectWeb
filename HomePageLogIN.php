@@ -183,14 +183,14 @@ include 'db2.php';
 
       if ($result->num_rows > 0) {
         echo '<div class="row">'; // Start of the row div
-
+      
         // Display the data for each guide
         $counter = 0; // Counter to determine the position of the guide div
-
+      
         while ($row = $result->fetch_assoc()) {
           $position = $counter % 3; // Calculate the position based on the counter
           $positionClass = ""; // Class for the position div
-
+      
           // Determine the position class
           if ($position === 0) {
             $positionId = "left";
@@ -210,7 +210,7 @@ include 'db2.php';
           echo "<span class='ending-point'>Ending Point: " . $row["ending_point"] . "</span><br>";
           echo '</div>';
           echo '<div class="map-container" style="width: 100%; height: 100%;">';
-          echo '<div id="map' . $row["id_guide"] . '" style="width: 100%; height: 100%;"></div>';
+          echo '<div id="map' . $row["id_guide"] . '" style="width: 100%; height: 100%; border-radius:5%; overflow: hidden;"></div>';
           echo '</div>';
           echo '</div>';
           echo '</div>';
@@ -226,6 +226,7 @@ include 'db2.php';
 
 
       ?>
+    </div>
       <!--Footer-->
       <div class="clearfix">
         <footer class="footer">
