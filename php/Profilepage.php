@@ -10,7 +10,7 @@ if (isset($_SESSION['username'])) {
     echo $username . "\n\n";
 
     // Create a new connection
-    $link = mysqli_connect('localhost', 'root', '', 'phpmyadmin') or die("No connection");
+    $link = mysqli_connect('localhost', 'root', '', 'travelwebsite') or die("No connection");
 
     // Check if the connection was successful
     if (!$link) {
@@ -18,7 +18,7 @@ if (isset($_SESSION['username'])) {
     }
 
     // Query to retrieve the number of votes for the user
-    $query = "SELECT NumVotes, NumFollowers, NumGuides FROM register WHERE Email = '$username'";
+    $query = "SELECT NumVotes, NumFollowers, NumGuides FROM user WHERE Email = '$username'";
 
     // Execute the query
     $result = mysqli_query($link, $query);
