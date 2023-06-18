@@ -228,7 +228,7 @@ include 'db2.php';
           echo "<span class='ending-point'>Ending Point: " . $row["ending_point"] . "</span><br>";
           echo '</div>';
           echo '<div class="map-container" style="width: 100%; height: 100%;">';
-          echo '<div id="map' . $row["id_guide"] . '" style="width: 100%; height: 100%;"></div>';
+          echo '<div id="map' . $row["id_guide"] . '" style="width: 100%; height: 100%; border-radius:5%; overflow: hidden;"></div>';
           echo '</div>';
           echo '</div>';
           echo '</div>';
