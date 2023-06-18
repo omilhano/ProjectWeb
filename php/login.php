@@ -1,6 +1,6 @@
 <?php
 
-$link = mysqli_connect('localhost', 'root', '', 'phpmyadmin') or die("No connection");
+$link = mysqli_connect('localhost', 'root', '', 'travelwebsite') or die("No connection");
 
 session_start();
 
@@ -12,7 +12,7 @@ if (@$_POST['username'] && @$_POST['password']) {
     $uuser = mysqli_real_escape_string($link, $_POST['username']);
     $inputPassword = ($_POST['password']);
 
-    $sql = "SELECT password, admin FROM register WHERE email='$uuser'";
+    $sql = "SELECT password, admin FROM user WHERE email='$uuser'";
     $result = mysqli_query($link, $sql);
 
     if (!$result || mysqli_num_rows($result) < 1) {

@@ -1,6 +1,6 @@
 <?php
 
-$link = mysqli_connect('localhost', 'root', '', 'phpmyadmin') or die("No connection");
+$link = mysqli_connect('localhost', 'root', '', 'travelwebsite') or die("No connection");
 
 session_start(); 
 
@@ -13,7 +13,7 @@ if (@$_POST['username'] && @$_POST['password']){
 	$uuser= mysqli_real_escape_string($link, $_POST['username']);
 	$upass= md5($_POST['password']);
 
-	$sql="SELECT id FROM users WHERE password='$upass' AND username='$uuser'";
+	$sql="SELECT id FROM user WHERE password='$upass' AND username='$uuser'";
 	$result = mysqli_query($link, $sql);
 	$num = mysqli_num_rows($result);
 
