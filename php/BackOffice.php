@@ -217,18 +217,22 @@ if (isset($_SESSION['username'])) {
     <div class="box-container">
         <?php $counter = 0; ?>
         <?php foreach ($users as $user) { ?>
-            <div class="box">
-                <a href="guides_table.php?id=<?= $user['id'] ?>">
-                    <img class="link_img" src = "img_db/<?= $user['Image']?>">
-                </a><br>
-                <div class="control-buttons">
+            <?php if ($user['Control'] != 1) { // Skip the guide if Control is 1 ?>
+                <div class="box">
+                    <a href="guides_table.php?id=<?= $user['id'] ?>">
+                        <img class="link_img" src="img_db/<?= $user['Image'] ?>">
+                    </a><br>
+                    <p class="guide_title"><?= $user['Country'] ?><br></p>
+                    <p class="guide_subtitle"><?= $user['Location'] ?><br></p>
+
+                    <div class="control-buttons">
                         <form action="Control.php" method="post" class="control-form">
                             <input type="hidden" name="guide_id" value="<?= $user['id'] ?>">
                             <button type="submit" name="add" class="add-button">
                                 <i class="fas fa-thumbs-up"></i> Add
                             </button>
                         </form>
-                        <div class = "control-count"><?= $user['Control'] ?> Control</div>
+                        <div class="control-count"><?= $user['Control'] ?> Control</div>
                         <form action="Control.php" method="post" class="control-form">
                             <input type="hidden" name="guide_id" value="<?= $user['id'] ?>">
                             <button type="submit" name="delete" class="delete-button">
@@ -236,10 +240,11 @@ if (isset($_SESSION['username'])) {
                             </button>
                         </form>
                     </div>
-            </div>
-            <?php $counter++; ?>
-            <?php if ($counter % 3 == 0) { ?>
-                </div><div class="box-container">
+                </div>
+                <?php $counter++; ?>
+                <?php if ($counter % 3 == 0) { ?>
+                    </div><div class="box-container">
+                <?php } ?>
             <?php } ?>
         <?php } ?>
     </div>
