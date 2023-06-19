@@ -186,7 +186,7 @@ if (isset($_SESSION['username'])) {
 
       <ul class = "navbar">
           <li><a href = "../html/HomePageAdmin.html" class = "active" >Home</a></li>
-          <li><a href = "../html/guides_page.html">List of Guides</a></li>
+          <li><a href = "../php/GuidesPage.php">List of Guides</a></li>
 
       </ul>
 
@@ -280,9 +280,9 @@ if (isset($_SESSION['username'])) {
             <div id = "footer-mid" class = "footer-col">
               <h4>menu</h4>
               <ol>
-                <div class = "f"><a href = "../html/guides_page.html">list of guides</a></div>
-                <div class = "f"><a href = "#">social features</a></div>
-                <div class = "f"><a href = "../html/profilepage.html">profile page</a></div>
+                <div class = "f"><a href = "../php/GuidesPage.php">list of guides</a></div>
+                <div class = "f"><a href = "../php/TravelersHubnew.php">Travelers Hub</a></div>
+                <div class = "f"><a href = "../php/Profilepage.php">profile page</a></div>
               </ol>
           </div>
           <div id = "footer-mid" class = "footer-col">
