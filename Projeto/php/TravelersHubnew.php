@@ -122,18 +122,15 @@ if (isset($_SESSION['username'])) {
             <?php if (!empty($users)) { ?>
               <?php foreach ($users as $user) { ?>
                 <div class="box">
-                  <div>
-                    <a href="Userprofile.php?username=<?= $user['username'] ?>">
-                      <?= $user['username'] ?>
-                    </a><br>
-                    Number of Votes:
-                    <?= $user['NumVotes'] ?><br>
-                    Number of Followers:
-                    <?= $user['NumFollowers'] ?><br>
-                    Number of Guides:
-                    <?= $user['NumGuides'] ?>
-                  </div>
-                </div>
+                            <div>
+                            <a class = "user_n" href="Userprofile.php?username=<?= $user['username'] ?>">
+                                <?= $user['username'] ?>
+                            </a><br>
+                                Number of Votes: <div class = "v"><?= $user['NumVotes'] ?><br></div>
+                                Number of Followers: <div class = "v"><?= $user['NumFollowers'] ?><br></div>
+                                Number of Guides: <div class = "v"><?= $user['NumGuides'] ?></div>
+                            </div>
+                        </div>
               <?php } ?>
             <?php } else { ?>
               <p>No results found.</p>
