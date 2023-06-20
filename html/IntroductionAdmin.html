@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <title>Turistic</title>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/Introduction.css">
+    <link rel="stylesheet" href="../css/HomePage.css">
+    <link rel="stylesheet" href="../css/footer.css">    
+    <link rel = "stylesheet" href="../css/navbar.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" type = "text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+<style>
+
+/*NEED TO PUT @MEDIA HERE TO OVERWRITE BOOTSTRAP*/
+
+body{overflow-x: hidden;}
+
+*{
+      padding: 0;
+      margin: 0;
+  }
+
+  .background-image{
+      background-color: rgba(128, 128, 128, 0.644);
+      background-image: url('../img/Snow-mountains.jpg');
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+  }
+
+.navbar li a, .nav_main a{text-decoration: none;} /*removes bootstrap underline under the links*/
+
+@media (max-width: 1280px){ /*resize para manter espaço entre logo - navbar - main*/
+  header{
+      padding: 14px 2%;
+      transition: 0.2s;
+  }
+
+  .navbar a{
+      padding: 5px 0;
+      margin: 0px 20px;
+  }
+}
+
+@media (max-width: 1000px){ /*Substituição por dropdown*/
+  #menu-icon{
+      display: block; /*enable dropdown*/
+  }
+
+  .navbar{ /*tansição de navbar para dropdown box*/
+      /*mudar posição navbar*/
+      position: absolute; 
+      top: 100%;
+      /*"criar" box*/
+      width: 270px; 
+      background: var(--main-color);
+      /*Organizar posição dos elementos*/
+      display: flex; 
+      flex-direction: column; 
+      justify-content: flex-start;
+      /*custom box*/
+      border-radius: 10px; 
+      transition: all 0.3s ease;
+  }
+
+  .navbar a{ /*espaço entre elementos e entre box + transição*/
+      display: block;
+      margin: 12px 0;
+      padding: 0px 25px;
+      transition: all 0.3 ease;
+  }
+
+  .navbar a:hover{
+      color: var(--text-color);
+      transform: translateY(10px); /*moves 10 px down when hovered*/
+  }
+
+  .navbar {
+    display: none;/*Trigger para fazer navbar box sair ao clicar no "menu-icon"*/
+  }
+
+  .navbar a.active{
+      color: var(--text-color)
+  }
+
+  .navbar.open{ /*CSS que traz dropdown da direita com JQuery*/
+      display: block;
+  }
+}
+
+@media (max-width: 385px) {
+.nav_main a{
+  font-size: 0.8rem;
+}
+}
+
+</style>
+
+<!--MENU-->
+</head>
+<body >
+<div class = "background-image">
+    <header>
+        <a href = "../html/HomePageAdmin.html" class = "nav_logo"><img src = "../img/logo1.png"></a>
+
+        <ul class = "navbar">
+            <li><a href = "../html/HomePageAdmin.html" class = "active" >Home</a></li>
+            <li><a href = "../php/GuidesPageAdmin.php">List of Guides</a></li>
+            <li><a href = "../php/TravelersHubnewAdmin.php">Travelers Hub</a></li>
+            <li><a href = "../php/BackOffice.php">BackOffice</a></li>
+            <li><a href = "../html/profilepage.html">Profile Page</a></li>
+        </ul>
+
+        <div class = "nav_main">
+          <a href="#" class = "user"><i class="ri-user-fill"></i>Log in</a>
+          <a href="#" class = "register" style = "text-decoration: none;">Register</a>
+          <div class="bx bx-menu" id = "menu-icon"></div>
+        </div>
+    </header>
+
+<!--MAIN  ->  POR ACABAR: (ajustar localização dos containers em tablet e mobile para responsive, centrar dropdown do mail para responsive)--> 
+  <div class="container-fluid" id = "ourteam" style="margin-top: 7%;">
+    <div class="row">
+        <div class = "title" style = "text-align: center;">Our Team</div>
+    </div>
+    <nav>
+        <div class="container-fluid" id = "profiles">
+            <div class="row">
+              <!--Alex-->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class = "border rounded shadow bg-secondary-subtle custom1" style="height: 150%"> 
+                      <!--Profile-->  
+                      <img src = "../img/Axel.jpg" class = "img1" style = "position: relative; left: 30%; top: 15%">
+                        <p class = "names" style = "text-align: center; position: relative; top: 20%">Alexandre Francisco <br> nº 20221512</p>
+                        <!--Icons-->
+                        <div class = "icons d-flex" style = "position: relative; top: 24%;">
+                          <a href="https://www.linkedin.com/in/alexandremvfrancisco/" target = "_blank" id="icon-no-line" class = "no-underline" style = "position: relative; left: 20%; width: 16%">
+                            <img src="../img/Linkedin.jpg" class = "rounded-2" lt="Linkedin Profile" style = "width: 100%">
+                          </a>
+
+                          <!--Dropdown email-->
+                          <div style = "width: 21%; position: relative; left: 0%; bottom: 20%">
+                            <a  class="dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                <img src="../img/Email.png"  lt="Gmail" style = "width: 100%; position: relative; left: 120%;">
+                            </a>
+                            <div class="dropdown-menu container-fluid" style="width: auto">
+                              <div>
+                                <p id = "email-copy1" class="dropdown-item disabled" style="text-align: center; color: #000">20221512@novaims.unl.pt</p>
+                                <button id="copy-button1" class="border rounded border border-dark-subtle dropdown-item"  type = "button">Copy</button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <a href= "https://www.instagram.com/omilhas_/" class = "no-underline" style = "position: relative; left: 30%; width: 16%" target = "_blank">
+                            <img src="../img/Insta.jpg" class = "rounded-2" lt="Instagram" style = "width: 100%">
+                          </a>
+                      </div>
+                    </div>
+                </div>
+              <!--Eli-->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class = "border rounded shadow bg-secondary-subtle custom2" style="height: 150%"> 
+                      <!--Profile-->   
+                      <img src = "../img/Elai.jpg" class = "img2" style = "position: relative; left: 30%; top: 20%">
+                        <p class = "names"  style = "text-align: center; position: relative; top: 30%;">Eli Godinho <br> nº 20221781</p>
+                        <!--Icons-->
+                        <div class = "icons d-flex" style = "position: relative; top: 34%;">
+                          <a href="https://www.linkedin.com/in/eli-godinho/" target = "_blank" id="icon-no-line" class = "no-underline" style = "position: relative; left: 20%; width: 16%">
+                            <img src="../img/Linkedin.jpg" class = "rounded-2" lt="Linkedin Profile" style = "width: 100%">
+                          </a>
+
+                          <!--Dropdown email-->
+                          <div id = "mail" style = "width: 21%; position: relative; left: 0%; bottom: 20%">
+                            <a  class="dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                <img src="../img/Email.png"  lt="Gmail" style = "width: 100%; position: relative; left: 120%;">
+                            </a>
+                            <div class="dropdown-menu mailbox" style="width: auto;">
+                              <div>
+                                <p id = "email-copy2" class="dropdown-item disabled" style="text-align: center; color: #000">20221781@novaims.unl.pt</p>
+                                <button id="copy-button2" class="border rounded border border-dark-subtle dropdown-item"  type = "button">Copy</button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <a href= "https://www.instagram.com/cyref_/" class = "no-underline" style = "position: relative; left: 30%; width: 16%" target = "_blank">
+                            <img src="../img/Insta.jpg" class = "rounded-2" lt="Instagram" style = "width: 100%">
+                          </a>
+                      </div>
+                    </div>
+                </div>
+                <!--Gui-->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class = "border rounded shadow bg-secondary-subtle custom3"  style="height: 150%"> 
+                          <!--Profile-->   
+                          <img src = "../img/Guirelhme.jpg" class = "img3" style = "position: relative; left: 30%; top: 15%">
+                            <p class = "names"  style = "text-align: center; position: relative; top: 21%">Guilherme Marques <br> nº 20221780</p>
+                            <!--Icons-->
+                            <div class = "icons d-flex" style = "position: relative; top: 26%;">
+                              <a href="https://www.linkedin.com/in/guilherme-alves-marques-08b36b245/" target = "_blank" id="icon-no-line" class = "no-underline" style = "position: relative; left: 20%; width: 16%">
+                                <img src="../img/Linkedin.jpg" class = "rounded-2" lt="Linkedin Profile" style = "width: 100%">
+                              </a>
+    
+                              <!--Dropdown email-->
+                              <div style = "width: 21%; position: relative; left: 0%; bottom: 20%">
+                                <a  class="dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                    <img src="../img/Email.png"  lt="Gmail" style = "width: 100%; position: relative; left: 120%;">
+                                </a>
+                                <div class="dropdown-menu mailbox" style="width: auto;">
+                                  <div>
+                                    <p id = "email-copy3" class="dropdown-item disabled" style="text-align: center; color: #000">20221780@novaims.unl.pt</p>
+                                    <button id="copy-button3" class="border rounded border border-dark-subtle dropdown-item"  type = "button">Copy</button>
+                                  </div>
+                                </div>
+                              </div>
+    
+                              <a href= "https://www.instagram.com/lord_katsumoto_/" class = "no-underline" style = "position: relative; left: 30%; width: 16%" target = "_blank">
+                                <img src="../img/Insta.jpg" class = "rounded-2" lt="Instagram" style = "width: 100%">
+                              </a>
+                          </div>
+                        </div>
+                </div>
+                <!--Rafa-->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class = "border rounded shadow bg-secondary-subtle custom4" style="height: 150%"> 
+                      <!--Profile--> 
+                      <img src = "../img/Ralafel.jpg" class = "img4" style = "position: relative; left: 30%; top: 15%">
+                        <p class = "names" style = "text-align: center; position: relative; top: 23%">Rafael Ribeiro <br> nº 20221853</p>
+                        <!--Icons-->
+                        <div class = "icons d-flex" style = "position: relative; top: 28%;">
+                          <a href="https://www.linkedin.com/in/rafael-es-ribeiro/" target = "_blank" id="icon-no-line" class = "no-underline" style = "position: relative; left: 20%; width: 16%">
+                            <img src="../img/Linkedin.jpg" class = "rounded-2" lt="Linkedin Profile" style = "width: 100%">
+                          </a>
+
+                          <!--Dropdown email-->
+                          <div style = "width: 21%; position: relative; left: 0%; bottom: 20%">
+                            <a  class="dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                <img src="../img/Email.png"  lt="Gmail" style = "width: 100%; position: relative; left: 120%;">
+                            </a>
+                            <div class="dropdown-menu mailbox" style="width: auto;">
+                              <div>
+                                <p id = "email-copy4" class="dropdown-item disabled" style="text-align: center; color: #000">20221853@novaims.unl.pt</p>
+                                <button id="copy-button4" class="border rounded border border-dark-subtle dropdown-item"  type = "button">Copy</button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <a href= "https://www.instagram.com/rafaesr4/" class = "no-underline" style = "position: relative; left: 30%; width: 16%" target = "_blank">
+                            <img src="../img/Insta.jpg" class = "rounded-2" lt="Instagram" style = "width: 100%">
+                          </a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </nav>
+  </div>
+</div>   
+<!--Footer--> 
+      <div class = "clearfix">
+      <footer class = "footer">
+        <div class = "container-footer">
+          <div class = "row-footer">
+            <div id = "footer-logo" class = "footer-col" >
+                <ol >
+                  <div id = "logo">
+                    <a class = "a" href = "../html/HomePageAdmin.html"><img id = "logo1" src = "../img/logo1.png"></a>
+                    <div class = "copyright"><i ></i>Copyright © 2023 "Web Project" All rights reserved.</div>
+                  </div>
+                </ol>
+            </div>
+            <div id = "footer-mid" class = "footer-col" >
+              <h4>company</h4>
+              <ol>
+                <div class = "f"><a href = "../html/IntroductionAdmin.html">our team</a></div>
+                <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">contact us</a></div>
+                <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">privacy policy</a></div>
+                <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">terms of services</a></div>
+              </ol>
+          </div>
+          <div id = "footer-mid" class = "footer-col">
+            <h4>menu</h4>
+            <ol>
+              <div class = "f"><a href = "../php/GuidesPageAdmin.php">list of guides</a></div>
+              <div class = "f"><a href = "../php/TravelersHubnewAdmin.php">Travelers Hub</a></div>
+              <div class = "f"><a href = "../php/BackOffice.php">BackOffice</div>
+              <div class = "f"><a href = "profilepage.html">profile page</a></div>
+            </ol>
+        </div>
+        <div id = "footer-mid" class = "footer-col">
+          <h4>follow us</h4>
+          <div class = "social-links">
+            <a href = "#"><i class = "fab fa-facebook-f"></i></a>
+            <a href = "#"><i class = "fab fa-twitter"></i></a>
+            <a href = "#"><i class = "fab fa-instagram"></i></a>
+            <a href = "#"><i class = "fab fa-linkedin-in"></i></a>
+          </div>
+      </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+  
+
+
+<script src = "../js/Introduction.js"></script>
+<script src="../js/HomePageJS.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+    let $menu = $('#menu-icon'); // Select menu-icon element
+    let $navbar = $('.navbar'); // Select navbar element
+  
+    $menu.on('click', function() { // When menu-icon is clicked function() {...} activated
+      $menu.toggleClass('bx-x'); //adiciona class ".bx-x" q é um "X"
+      $navbar.toggleClass('open');//adiciona class ".open" q va ativar o css q traz o dropddown da direita
+    });
+  });
+  //Quando voltamos a clicar no menu-item ambas as classes são removidas
+
+  // Get the modal
+var modal = document.getElementById("file_modal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("login-button");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+// When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+// Checks if password corresponds to the user
+function checkPassword() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if (password === "mypassword") {
+        // correct password, do something
+    } else {
+        // incorrect password, update error message
+        var errorElement = document.getElementById("password-error");
+        errorElement.textContent = "Incorrect password. Please try again.";
+    }
+}
+// This part removes the text from the modal when it gets closed
+$('#password-error').text('');
+
+$(".close").click(function() {
+    $('#password-error').text('');
+    $("#file_modal").css("display", "none");
+});
+document.getElementById("close-modal").addEventListener("click", function() {
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+});
+  </script>
+</body>
+</html>

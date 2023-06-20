@@ -8,10 +8,10 @@
     <title>Turistic</title>
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
-    <link rel="stylesheet" href="Introduction.css">
-    <link rel="stylesheet" href="HomePage.css">
-    <link rel="stylesheet" href="footer.css">    
-    <link rel = "stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="../css/Introduction.css">
+    <link rel="stylesheet" href="../css/HomePage.css">
+    <link rel="stylesheet" href="../css/footer.css">    
+    <link rel = "stylesheet" href="../css/navbar.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" type = "text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
@@ -31,7 +31,7 @@ body{
 
   .background-image{
       background-color: rgba(128, 128, 128, 0.644);
-      background-image: url('bg-image.jpg');
+      background-image: url('../img/bg-image.jpg');
       background-blend-mode: multiply;
       background-size: cover;
       background-repeat: no-repeat;
@@ -123,17 +123,17 @@ body{
 <body >
 <div class = "background-image">
   <header>
-    <a href = "HomePageLogIN.html" class = "nav_logo"><img src = "logo1.png"></a>
+    <a href = "../html/HomePageLogIN.html" class = "nav_logo"><img src = "../img/logo1.png"></a>
 
     <ul class = "navbar">
-        <li><a href = "HomePageLogIN.html" class = "active" >Home</a></li>
-        <li><a href = "guides_page.html">List of Guides</a></li>
-        <li><a href = "#">Social Features</a></li>
-        <li><a href = "profilepage.html">Profile Page</a></li>
+        <li><a href = "../html/HomePageLogIN.html" class = "active" >Home</a></li>
+        <li><a href = "../php/GuidesPage.php">List of Guides</a></li>
+        <li><a href = "../php/TravelersHubnew.php">Social Features</a></li>
+        <li><a href = "../html/profilepage.html">Profile Page</a></li>
     </ul>
 
     <div class = "nav_main">
-      <form action="logout.php" method="post">
+      <form action="../php/logout.php" method="post">
         <button type="submit" name="logout">Logout</button>
       </form>
       <div class="bx bx-menu" id = "menu-icon"></div>
@@ -191,7 +191,7 @@ body{
             <div id = "footer-logo" class = "footer-col" >
                 <ol >
                   <div id = "logo">
-                    <a class = "a" href = "HomePageLogIN.html"><img id = "logo1" src = "logo1.png"></a>
+                    <a class = "a" href = "../html/HomePageLogIN.html"><img id = "logo1" src = "../img/logo1.png"></a>
                     <div class = "copyright"><i></i>Copyright © 2023 "Web Project" All rights reserved.</div>
                   </div>
                 </ol>
@@ -199,7 +199,7 @@ body{
             <div id = "footer-mid" class = "footer-col" >
               <h4>company</h4>
               <ol>
-                <div class = "f"><a href = "Introduction.html">our team</a></div>
+                <div class = "f"><a href = "../html/Introduction.html">our team</a></div>
                 <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">contact us</a></div>
                 <div class = "f"><a href = "#">privacy policy</a></div>
                 <div class = "f"><a href = "#">terms of services</a></div>
@@ -208,9 +208,9 @@ body{
           <div id = "footer-mid" class = "footer-col">
             <h4>menu</h4>
             <ol>
-              <div class = "f"><a href = "guides_page.html">list of guides</a></div>
+              <div class = "f"><a href = "../html/guides_page.html">list of guides</a></div>
               <div class = "f"><a href = "#">social features</a></div>
-              <div class = "f"><a href = "profilepage.html">profile page</a></div>
+              <div class = "f"><a href = "../html/profilepage.html">profile page</a></div>
             </ol>
         </div>
         <div id = "footer-mid" class = "footer-col">
@@ -227,8 +227,8 @@ body{
         
       </footer>
     </div>
-  <script src = "Introduction.js"></script>
-  <script src = "navbar.js"></script>
+  <script src = "../js/Introduction.js"></script>
+  <script src = "../js/navbar.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
