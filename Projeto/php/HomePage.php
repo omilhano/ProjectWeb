@@ -190,7 +190,7 @@ body{
     <?php if ($guide['Control'] == 1) { ?>  
       <div id="box" class="col-lg-4 col-md-12 col-sm-12">
         <div id="left" data-cycle-slides="> div">
-          <div><a href="guides_table.php?id=<?= $guide['id'] ?>">
+          <div><a href="guides_tablelogout.php?id=<?= $guide['id'] ?>">
             <img class = "home_img" src="img_db/<?= $guide['Image'] ?>">
           </a><div>
               <p class = "guide_title"><?php echo $guide['Country']; ?></p>
