@@ -93,7 +93,7 @@ if (isset($_SESSION['username'])) {
     <ul class = "navbar">
         <li><a href = "../php/HomePageAdmin.php" class = "active" >Home</a></li>
         <li><a href = "../php/GuidesPageAdmin.php">List of Guides</a></li>
-        <li><a href = "../php/ProfilepageAdmin.html">Profile Page</a></li> 
+        <li><a href = "../php/ProfilepageAdmin.php">Profile Page</a></li> 
         <li><a href = "../php/BackOffice.php">BackOffice</a></li>
     </ul>
 
