@@ -22,8 +22,6 @@
 
   #profiles {
     position: relative;
-    margin-top: 20%;
-    padding-bottom: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
   
@@ -95,6 +93,8 @@
     font-weight: bold;
     font-size: 35px;
     color: #fff;
+    position: relative;
+    bottom: 100px
   }
 
   #email-copy1, #email-copy2, #email-copy3, #email-copy4{
