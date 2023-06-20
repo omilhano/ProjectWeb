@@ -35,9 +35,7 @@ if (isset($_GET['username'])) {
         if ($result && $row = mysqli_fetch_assoc($result)) {
             // Retrieve the profile-stats
             $email = $row['username'];
-            $Votes = $row['NumVotes'];
             $Followers = $row['NumFollowers'];
-            $Guides = $row['NumGuides'];
             // Use the retrieved profile-stats as needed
             // For example, you can echo it or assign it to a variable for further use
         } else {
@@ -49,33 +47,64 @@ if (isset($_GET['username'])) {
     } else {
         echo "Error: " . mysqli_error($link);
     }
+  // Query to count the number of rows in the "guides" table where the column 'username' matches $name
+  $guidesCountQuery = "SELECT COUNT(*) AS count FROM guides WHERE Username = '$name'";
 
-    $follower_username = $_SESSION['username'];
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') { //button is clicked
-      $following_username = $_GET['username'];
-      if ($following_username != $follower_username) { //can't follow yourself
-        $selector = "SELECT * FROM follow WHERE following_username = '$following_username' AND 
-          follower_username = '$follower_username'"; //check if connection exists
-        $istrue = mysqli_query($link, $selector);
-        if (mysqli_num_rows($istrue) <= 0) { //connection can't exist already, cant follow twice
-          $query = "INSERT INTO follow (follower_username, following_username)
-              VALUES ('$follower_username', '$following_username')";
-          $result = mysqli_query($link, $query); //update follow results
-          if ($result) {
-            $updatefollowers = "UPDATE user SET NumFollowers = NumFollowers + 1 WHERE username = '$following_username'";
-            $updatefollowers = mysqli_query($link, $updatefollowers);
-  
-            if (!$updatefollowers) {
-              echo "Failed to update follower count.";
-            }
-          } else {
-            echo "Failed to insert follow record.";
+  // Execute the count query
+  $guidesCountResult = mysqli_query($link, $guidesCountQuery);
+  // Check if the count query was successful
+  if ($guidesCountResult) {
+    // Fetch the guide count value
+    $guideCountRow = mysqli_fetch_assoc($guidesCountResult);
+    $Guides = $guideCountRow['count'];
+  } else {
+    // Handle the case when the count query fails
+    echo "Error retrieving guide count: " . mysqli_error($link);
+  }
+
+  // Query to calculate the sum of 'Votes' column values for the given username
+  $votesSumQuery = "SELECT SUM(Votes) AS sum FROM guides WHERE Username = '$name'";
+
+  // Execute the sum query
+  $votesSumResult = mysqli_query($link, $votesSumQuery);
+
+  // Check if the sum query was successful
+  if ($votesSumResult) {
+    // Fetch the sum value
+    $votesSumRow = mysqli_fetch_assoc($votesSumResult);
+    $Votes = $votesSumRow['sum'];
+  } else {
+    // Handle the case when the sum query fails
+    echo "Error retrieving votes sum: " . mysqli_error($link);
+  }
+
+  $follower_username = $_SESSION['username'];
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') { //button is clicked
+    $following_username = $_GET['username'];
+    if ($following_username != $follower_username) { //can't follow yourself
+      $selector = "SELECT * FROM follow WHERE following_username = '$following_username' AND 
+        follower_username = '$follower_username'"; //check if connection exists
+      $istrue = mysqli_query($link, $selector);
+      if (mysqli_num_rows($istrue) <= 0) { //connection can't exist already, cant follow twice
+        $query = "INSERT INTO follow (follower_username, following_username)
+            VALUES ('$follower_username', '$following_username')";
+        $result = mysqli_query($link, $query); //update follow results
+        if ($result) {
+          $updatefollowers = "UPDATE user SET NumFollowers = NumFollowers + 1 WHERE username = '$following_username'";
+          $updatefollowers = mysqli_query($link, $updatefollowers);
+
+          if (!$updatefollowers) {
+            echo "Failed to update follower count.";
           }
+        } else {
+          echo "Failed to insert follow record.";
         }
       }
     }
-    // Close the connection
-    mysqli_close($link);
+  }
+
+  // Close the connection
+  mysqli_close($link);
 }
 ?>
 
@@ -123,6 +152,7 @@ if (isset($_GET['username'])) {
         <li><a href = "../html/HomePageAdmin.html" class = "active" >Home</a></li>
         <li><a href = "../php/GuidesPageAdmin.php">List of Guides</a></li>
         <li><a href = "../php/TravelersHubnewAdmin.php">Travelers Hub</a></li>
+        <li><a href = "../php/ProfilepageAdmin.php">Profile Page</a></li>       
         <li><a href = "../php/BackOffice.php">BackOffice</a></li>
     </ul>
 
@@ -145,16 +175,10 @@ if (isset($_GET['username'])) {
     </div>
     <div class="right-content">
       <img src="../img/stockprofile.jpg" id="profile_pic"><br><br>
-      <div class="follow_button">
-              <form action="" method="post">
-                <button class="button">Follow me</button>
-              </form>
-      </div>
       <div><?= $name ?><br> Number of Votes: <?= $Votes ?><br>Number of Followers: <?= $Followers ?><br>Number of Guides: <?= $Guides ?></div>
     </div>
   </div>
  </div>
-</div>
 </div>
 <!--Footer--> 
     <div class = "clearfix">
@@ -183,6 +207,7 @@ if (isset($_GET['username'])) {
             <ol>
               <div class = "f"><a href = "../php/GuidesPageAdmin.php">list of guides</a></div>
               <div class = "f"><a href = "../php/TravelersHubnewAdmin.php">travelers hub</a></div>
+              <div class = "f"><a href = "../php/ProfilepageAdmin.php">profile page</a></div>              
               <div class = "f"><a href = "../php/BackOffice.php">BackOffice</div>
             </ol>
         </div>

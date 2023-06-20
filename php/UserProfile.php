@@ -35,9 +35,7 @@ if (isset($_GET['username'])) {
         if ($result && $row = mysqli_fetch_assoc($result)) {
             // Retrieve the profile-stats
             $email = $row['username'];
-            $Votes = $row['NumVotes'];
             $Followers = $row['NumFollowers'];
-            $Guides = $row['NumGuides'];
             // Use the retrieved profile-stats as needed
             // For example, you can echo it or assign it to a variable for further use
         } else {
@@ -49,6 +47,36 @@ if (isset($_GET['username'])) {
     } else {
         echo "Error: " . mysqli_error($link);
     }
+  // Query to count the number of rows in the "guides" table where the column 'username' matches $name
+  $guidesCountQuery = "SELECT COUNT(*) AS count FROM guides WHERE Username = '$name'";
+
+  // Execute the count query
+  $guidesCountResult = mysqli_query($link, $guidesCountQuery);
+  // Check if the count query was successful
+  if ($guidesCountResult) {
+    // Fetch the guide count value
+    $guideCountRow = mysqli_fetch_assoc($guidesCountResult);
+    $Guides = $guideCountRow['count'];
+  } else {
+    // Handle the case when the count query fails
+    echo "Error retrieving guide count: " . mysqli_error($link);
+  }
+
+  // Query to calculate the sum of 'Votes' column values for the given username
+  $votesSumQuery = "SELECT SUM(Votes) AS sum FROM guides WHERE Username = '$name'";
+
+  // Execute the sum query
+  $votesSumResult = mysqli_query($link, $votesSumQuery);
+
+  // Check if the sum query was successful
+  if ($votesSumResult) {
+    // Fetch the sum value
+    $votesSumRow = mysqli_fetch_assoc($votesSumResult);
+    $Votes = $votesSumRow['sum'];
+  } else {
+    // Handle the case when the sum query fails
+    echo "Error retrieving votes sum: " . mysqli_error($link);
+  }
 
   $follower_username = $_SESSION['username'];
   if ($_SERVER['REQUEST_METHOD'] === 'POST') { //button is clicked
@@ -154,7 +182,6 @@ if (isset($_GET['username'])) {
     </div>
   </div>
  </div>
-</div>
 </div>
 <!--Footer--> 
     <div class = "clearfix">
