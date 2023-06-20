@@ -182,11 +182,11 @@ if (isset($_SESSION['username'])) {
   <body >
   <div class = "background-image">
     <header>
-      <a href = "../html/HomePageAdmin.html" class = "nav_logo"><img src = "../img/logo1.png"></a>
+      <a href = "../html/HomePageLogIn.html" class = "nav_logo"><img src = "../img/logo1.png"></a>
 
       <ul class = "navbar">
-          <li><a href = "../html/HomePageAdmin.html" class = "active" >Home</a></li>
-          <li><a href = "../html/guides_page.html">List of Guides</a></li>
+          <li><a href = "../html/HomePageLogIn.html" class = "active" >Home</a></li>
+          <li><a href = "../php/GuidesPage.php">List of Guides</a></li>
 
       </ul>
 
@@ -264,7 +264,7 @@ if (isset($_SESSION['username'])) {
               <div id = "footer-logo" class = "footer-col" >
                   <ol >
                     <div id = "logo">
-                      <a class = "a" href = "../html/HomePageAdmin.html"><img id = "logo1" src = "../img/logo1.png" style = "width: 40%"></a>
+                      <a class = "a" href = "../html/HomePageLogIn.html"><img id = "logo1" src = "../img/logo1.png" style = "width: 40%"></a>
                       <div class = "copyright"><i></i>Copyright © 2023 "Web Project" All rights reserved.</div>
                     </div>
                   </ol>
@@ -273,17 +273,17 @@ if (isset($_SESSION['username'])) {
                 <h4>company</h4>
                 <ol>
                   <div class = "f"><a href = "../html/Introduction.html">our team</a></div>
-                  <div class = "f"><a href = "../html/https://www.youtube.com/watch?v=xvFZjo5PgG0">contact us</a></div>
-                  <div class = "f"><a href = "#">privacy policy</a></div>
-                  <div class = "f"><a href = "#">terms of services</a></div>
+                  <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">contact us</a></div>
+                  <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">privacy policy</a></div>
+                  <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">terms of services</a></div>
                 </ol>
             </div>
             <div id = "footer-mid" class = "footer-col">
               <h4>menu</h4>
               <ol>
-                <div class = "f"><a href = "../html/guides_page.html">list of guides</a></div>
-                <div class = "f"><a href = "#">social features</a></div>
-                <div class = "f"><a href = "../html/profilepage.html">profile page</a></div>
+                <div class = "f"><a href = "../php/Guidespage.php">list of guides</a></div>
+                <div class = "f"><a href = "../php/TravelersHubnew.php">Travelers Hub</a></div>
+                <div class = "f"><a href = "../php/Profilepage.php">profile page</a></div>
               </ol>
           </div>
           <div id = "footer-mid" class = "footer-col">

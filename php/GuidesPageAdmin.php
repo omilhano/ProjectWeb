@@ -188,7 +188,7 @@ if (isset($_SESSION['username'])) {
           <li><a href = "../html/HomePageAdmin.html" class = "active" >Home</a></li>
           <li><a href = "../php/GuidesPageAdmin.php">List of Guides</a></li>
           <li><a href = "../php/BackOffice.php">BackOffice</a></li>
-
+          <li><a href = "../php/ProfilepageAdmin.php">BackOffice</a></li>
       </ul>
 
       <li>
@@ -285,7 +285,7 @@ if (isset($_SESSION['username'])) {
                 <div class = "f"><a href = "../php/GuidesPageAdmin.php">list of guides</a></div>
                 <div class = "f"><a href = "../php/TravelersHubnewAdmin.php">Travelers Hub</div>
                 <div class = "f"><a href = "../php/BackOffice.php">BackOffice</div>
-                <div class = "f"><a href = "../html/profilepage.html">profile page</a></div>
+              <div class = "f"><a href = "../php/ProfilepageAdmin.php">profile page</a></div>
               </ol>
           </div>
           <div id = "footer-mid" class = "footer-col">

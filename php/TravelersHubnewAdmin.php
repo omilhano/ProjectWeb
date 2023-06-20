@@ -93,7 +93,7 @@ if (isset($_SESSION['username'])) {
     <ul class = "navbar">
         <li><a href = "../html/HomePageAdmin.html" class = "active" >Home</a></li>
         <li><a href = "../php/GuidesPageAdmin.php">List of Guides</a></li>
-        <li><a href = "profilepage.html">Profile Page</a></li> 
+        <li><a href = "../ProfilePageAdmin.php">Profile Page</a></li> 
         <li><a href = "../php/BackOffice.php">BackOffice</a></li>
     </ul>
 
@@ -165,6 +165,7 @@ if (isset($_SESSION['username'])) {
               <div class = "f"><a href = "../php/GuidesPageAdmin.php">list of guides</a></div>
               <div class = "f"><a href = "../php/TravelersHubnewAdmin">Travelers Hub</a></div>
               <div class = "f"><a href = "../php/BackOffice.php">BackOffice</div>
+              <div class = "f"><a href = "../php/ProfilepageAdmin.php">profile page</a></div>
             </ol>
         </div>
         <div id = "footer-mid" class = "footer-col">
