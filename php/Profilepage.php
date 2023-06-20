@@ -15,7 +15,7 @@ if (isset($_SESSION['username'])) {
   }
 
   // Query to retrieve the number of votes for the user
-  $query = "SELECT ID, username, NumVotes, NumFollowers, NumGuides FROM user WHERE Email = '$username'";
+  $query = "SELECT ID, username, NumVotes, NumFollowers FROM user WHERE Email = '$username'";
 
   // Execute the query
   $result = mysqli_query($link, $query);
@@ -27,13 +27,44 @@ if (isset($_SESSION['username'])) {
     $name = $row['username'];
     $Votes = $row['NumVotes'];
     $Followers = $row['NumFollowers'];
-    $Guides = $row['NumGuides'];
     $Userid = $row['ID'];
-
   } else {
     // Handle the case when the query fails
     echo "Error retrieving vote count: " . mysqli_error($link);
   }
+
+  // Query to count the number of rows in the "guides" table where the column 'username' matches $name
+  $guidesCountQuery = "SELECT COUNT(*) AS count FROM guides WHERE Username = '$username'";
+
+  // Execute the count query
+  $guidesCountResult = mysqli_query($link, $guidesCountQuery);
+
+  // Check if the count query was successful
+  if ($guidesCountResult) {
+    // Fetch the guide count value
+    $guideCountRow = mysqli_fetch_assoc($guidesCountResult);
+    $Guides = $guideCountRow['count'];
+  } else {
+    // Handle the case when the count query fails
+    echo "Error retrieving guide count: " . mysqli_error($link);
+  }
+
+  // Query to calculate the sum of 'Votes' column values for the given username
+  $votesSumQuery = "SELECT SUM(Votes) AS sum FROM guides WHERE Username = '$username'";
+
+  // Execute the sum query
+  $votesSumResult = mysqli_query($link, $votesSumQuery);
+
+  // Check if the sum query was successful
+  if ($votesSumResult) {
+    // Fetch the sum value
+    $votesSumRow = mysqli_fetch_assoc($votesSumResult);
+    $Votes = $votesSumRow['sum'];
+  } else {
+    // Handle the case when the sum query fails
+    echo "Error retrieving votes sum: " . mysqli_error($link);
+  }
+
   $sql = "SELECT * FROM follow WHERE follower_username = '$username'";
   $result = mysqli_query($link, $sql);
   $all_follow_string = "You don't follow anyone";
@@ -46,12 +77,10 @@ if (isset($_SESSION['username'])) {
           follower_username = '$following'";
       $is_mutual = mysqli_query($link, $mutual);
       array_push($all_follow, $following);
-      // if ( mysqli_num_rows($is_mutual) > 0 ){
-      //     echo ' You are following each other!';
-      // }
     }
     $all_follow_string = implode(" <br>", $all_follow);
   }
+
   // Close the database connection
   mysqli_close($link);
 }else{
