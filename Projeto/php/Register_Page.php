@@ -19,7 +19,7 @@ if ($password != $confirmPassword) {
 
     if ($ret) {
         $last_id = mysqli_insert_id($link);
-        header("Location: ../html/HomePage.html");
+        header("Location: ../php/HomePage.php");
     } else {
         echo "ERROR: Could not execute $sql." . mysqli_error($link);
     }
