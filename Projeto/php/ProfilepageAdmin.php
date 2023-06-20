@@ -67,7 +67,7 @@ if (isset($_SESSION['username'])) {
   $result = mysqli_query($link, $sql);
   $all_follow_string = "You don't follow anyone";
   if ($result && mysqli_num_rows($result) > 0) {
-    $all_follow = array();
+  $all_follow = array();
 
     while ($follow_connection = mysqli_fetch_assoc($result)) {
       $following = $follow_connection['following_username'];
@@ -81,7 +81,7 @@ if (isset($_SESSION['username'])) {
 
   // Close the database connection
   mysqli_close($link);
-} else {
+}else{
   echo "No user found.";
 }
 ?>
@@ -100,6 +100,7 @@ if (isset($_SESSION['username'])) {
   <link rel="stylesheet" href="../css/profilepage.css">
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/Profilepage.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css"
@@ -111,7 +112,7 @@ if (isset($_SESSION['username'])) {
 
     .background-image {
       background-color: rgba(128, 128, 128, 0.644);
-      background-image: url('../img/Snow-mountains.jpg');
+      background-image: url('../img/sakura-bg.jpg');
       background-blend-mode: multiply;
       background-size: cover;
       background-repeat: no-repeat;
@@ -119,7 +120,7 @@ if (isset($_SESSION['username'])) {
       overflow-y: auto;
     }
 
-    #modal_text {
+    #modal_text{
       color: black;
     }
   </style>
@@ -140,7 +141,8 @@ if (isset($_SESSION['username'])) {
 
       <div class="nav_main">
         <form action="logout.php" method="post">
-          <button type="submit" name="logout">Logout</button>
+        <a href="#" class = "user"><i class="ri-logout-box-r-line"></i>
+          <button id="login-button" name="logbutton" class="nav-link">Logout</button></a>
         </form>
         <div class="bx bx-menu" id="menu-icon"></div>
       </div>
@@ -189,9 +191,10 @@ if (isset($_SESSION['username'])) {
                 ?>
 
               </select>
-
-              <button class="edit-button" onclick="edit_guide();">Edit</button>
-              <button class="delete-button" onclick="delete_guide();">Delete</button>
+              <div class = "edit-delete">
+                <button class="edit-button" onclick="edit_guide();">Edit</button>
+                <button class="delete-button" onclick="delete_guide();">Delete</button>
+              </div>
               <script>
                 function edit_guide() {
                   var comboBox = document.getElementById('myComboBox');
@@ -228,9 +231,9 @@ if (isset($_SESSION['username'])) {
             </div>
           </div>
           <div class="right-content">
-            <img src="../img/stockprofile.jpg" id="profile_pic"><br><br>
+            <img src="../img/default.png" id="profile_pic"><br><br>
             <!-- Trigger/Open The Modal -->
-            <button id="myBtn">Open Modal</button>
+            <button id="myBtn">Following</button>
 
             <!-- The Modal -->
             <div id="myModal" class="modal">
@@ -240,9 +243,7 @@ if (isset($_SESSION['username'])) {
                 <span class="close">&times;</span>
                 <h4 id="modal_text">You follow: <br>
                 </h4>
-                <p id="modal_text">
-                  <?= $all_follow_string ?>
-                </p>
+                <p id="modal_text"><?= $all_follow_string ?></p>
               </div>
             </div>
             <div>
@@ -251,126 +252,123 @@ if (isset($_SESSION['username'])) {
               <?= $Followers ?><br>Number of Guides:
               <?= $Guides ?>
             </div>
-            <a class="button" href="../php/guides_form.php">Click Me</a>
+            <a class="button" href="../php/guides_form.php">Create a Guide</a>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!--Footer-->
-  <div class="clearfix">
-    <footer class="footer">
-      <div class="container-footer">
-        <div class="row-footer">
-          <div id="footer-logo" class="footer-col">
-            <ol>
-              <div id="logo">
-                <a class="a" href="../php/HomePageAdmin.php"><img id="logo1" src="../img/logo1.png"
-                    style="width: 40%;"></a>
-                <div class="copyright"><i></i>Copyright © 2023 "Web Project" All rights reserved.</div>
+    <!--Footer-->
+    <div class="clearfix">
+      <footer class="footer">
+        <div class="container-footer">
+          <div class="row-footer">
+            <div id="footer-logo" class="footer-col">
+              <ol>
+                <div id="logo">
+                  <a class="a" href="../php/HomePageAdmin.php"><img id="logo1" src="../img/logo1.png"
+                      style="width: 40%;"></a>
+                  <div class="copyright"><i></i>Copyright © 2023 "Web Project" All rights reserved.</div>
+                </div>
+              </ol>
+            </div>
+            <div id="footer-mid" class="footer-col">
+              <h4>company</h4>
+              <ol>
+                <div class="f"><a href="../html/IntroductionAdmin.html">our team</a></div>
+                <div class="f"><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">contact us</a></div>
+                <div class="f"><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">privacy policy</a></div>
+                <div class="f"><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">terms of services</a></div>
+              </ol>
+            </div>
+            <div id="footer-mid" class="footer-col">
+              <h4>menu</h4>
+              <ol>
+                <div class="f"><a href="../php/GuidesPageAdmin.php">Guides Page</a></div>
+                <div class="f"><a href="../php/TravelersHubnewAdmin.php">Travelers Hub</a></div>
+              </ol>
+            </div>
+            <div id="footer-mid" class="footer-col">
+              <h4>follow us</h4>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
               </div>
-            </ol>
-          </div>
-          <div id="footer-mid" class="footer-col">
-            <h4>company</h4>
-            <ol>
-              <div class="f"><a href="../html/IntroductionAdmin.html">our team</a></div>
-              <div class="f"><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">contact us</a></div>
-              <div class="f"><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">privacy policy</a></div>
-              <div class="f"><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">terms of services</a></div>
-            </ol>
-          </div>
-          <div id="footer-mid" class="footer-col">
-            <h4>menu</h4>
-            <ol>
-              <div class="f"><a href="../php/GuidesPageAdmin.php">Guides Page</a></div>
-              <div class="f"><a href="../php/TravelersHubnewAdmin.php">Travelers Hub</a></div>
-            </ol>
-          </div>
-          <div id="footer-mid" class="footer-col">
-            <h4>follow us</h4>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
         </div>
-      </div>
 
-    </footer>
-  </div>
-  <script src="Introduction.js"></script>
-  <script src="navbar.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js"
-    integrity="sha512-lvcHFfj/075LnEasZKOkj1MF6aLlWtmpFEyd/Kc+waRnlulG5er/2fEBA5DBff4BZrcwfvnft0PiAv4cIpkjpw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI1eO1w2j3bWV_m0D4TwP9zw8TzcmVgCc"></script>
+      </footer>
+    </div>
+    <script src="Introduction.js"></script>
+    <script src="navbar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js"
+      integrity="sha512-lvcHFfj/075LnEasZKOkj1MF6aLlWtmpFEyd/Kc+waRnlulG5er/2fEBA5DBff4BZrcwfvnft0PiAv4cIpkjpw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI1eO1w2j3bWV_m0D4TwP9zw8TzcmVgCc"></script>
 
-  <script> //Due to bootstrap, the java needs to stay in the same file
+    <script> //Due to bootstrap, the java needs to stay in the same file
 
-    //Nav bar Dropdown activation   
-    $(document).ready(function () {
-      let $menu = $('#menu-icon'); // Select menu-icon element
-      let $navbar = $('.navbar'); // Select navbar element
+      //Nav bar Dropdown activation   
+      $(document).ready(function () {
+        let $menu = $('#menu-icon'); // Select menu-icon element
+        let $navbar = $('.navbar'); // Select navbar element
 
-      $menu.on('click', function () { // When menu-icon is clicked function() {...} activated
-        $menu.toggleClass('bx-x'); //adiciona class ".bx-x" q é um "X"
-        $navbar.toggleClass('open');//adiciona class ".open" q va ativar o css q traz o dropddown da direita
+        $menu.on('click', function () { // When menu-icon is clicked function() {...} activated
+          $menu.toggleClass('bx-x'); //adiciona class ".bx-x" q é um "X"
+          $navbar.toggleClass('open');//adiciona class ".open" q va ativar o css q traz o dropddown da direita
+        });
       });
-    });
-    //Quando voltamos a clicar no menu-item ambas as classes são removidas
+      //Quando voltamos a clicar no menu-item ambas as classes são removidas
 
-    /*Effect fade-in for text*/
-    document.addEventListener('DOMContentLoaded', function () {
-      var element = document.querySelector('.row1');
-      element.classList.add('active');
-    });
+      /*Effect fade-in for text*/
+      document.addEventListener('DOMContentLoaded', function () {
+        var element = document.querySelector('.row1');
+        element.classList.add('active');
+      });
 
 
-  </script>
+    </script>
 
-  <script>
-    // Handle change event of the combo box
-    document.getElementById('myComboBox').addEventListener('change', function () {
-      var selectedValue = this.value;
-      console.log('Selected value:', selectedValue);
-      // Perform any additional actions based on the selected value
-    });
+    <script>
+      // Handle change event of the combo box
+      document.getElementById('myComboBox').addEventListener('change', function () {
+        var selectedValue = this.value;
+        console.log('Selected value:', selectedValue);
+        // Perform any additional actions based on the selected value
+      });
 
-    // Get the modal
-    var modal = document.getElementById("myModal");
+      // Get the modal
+      var modal = document.getElementById("myModal");
 
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
 
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks the button, open the modal 
-    btn.onclick = function () {
-      modal.style.display = "block";
-    }
+      // When the user clicks the button, open the modal 
+      btn.onclick = function () {
+        modal.style.display = "block";
+      }
 
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-      modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-      if (event.target == modal) {
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
         modal.style.display = "none";
       }
-    }
-  </script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-</body>
-</html>
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

@@ -192,9 +192,10 @@ if (isset($_SESSION['username'])) {
                 ?>
 
               </select>
-
-              <button class="edit-button" onclick="edit_guide();">Edit</button>
-              <button class="delete-button" onclick="delete_guide();">Delete</button>
+              <div class = "edit-delete">
+                <button class="edit-button" onclick="edit_guide();">Edit</button>
+                <button class="delete-button" onclick="delete_guide();">Delete</button>
+              </div>
               <script>
                 function edit_guide() {
                   var comboBox = document.getElementById('myComboBox');
@@ -231,9 +232,9 @@ if (isset($_SESSION['username'])) {
             </div>
           </div>
           <div class="right-content">
-            <img src="../img/stockprofile.jpg" id="profile_pic"><br><br>
+            <img src="../img/default.png" id="profile_pic"><br><br>
             <!-- Trigger/Open The Modal -->
-            <button id="myBtn">Open Modal</button>
+            <button id="myBtn">Following</button>
 
             <!-- The Modal -->
             <div id="myModal" class="modal">
@@ -252,12 +253,11 @@ if (isset($_SESSION['username'])) {
               <?= $Followers ?><br>Number of Guides:
               <?= $Guides ?>
             </div>
-            <a class="button" href="../php/guides_form.php">Click Me</a>
+            <a class="button" href="../php/guides_form.php">Create a Guide</a>
           </div>
         </div>
       </div>
     </div>
-  </div>
     <!--Footer-->
     <div class="clearfix">
       <footer class="footer">
@@ -299,6 +299,7 @@ if (isset($_SESSION['username'])) {
             </div>
           </div>
         </div>
+
       </footer>
     </div>
     <script src="Introduction.js"></script>
@@ -371,6 +372,4 @@ if (isset($_SESSION['username'])) {
       }
     </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>~
-</body>
-</html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
