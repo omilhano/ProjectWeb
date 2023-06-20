@@ -34,7 +34,7 @@ if (isset($_SESSION['username'])) {
   }
 
   // Query to count the number of rows in the "guides" table where the column 'username' matches $name
-  $guidesCountQuery = "SELECT COUNT(*) AS count FROM guides WHERE Username = '$username'";
+  $guidesCountQuery = "SELECT COUNT(*) AS count FROM guides WHERE Username = '$name'";
 
   // Execute the count query
   $guidesCountResult = mysqli_query($link, $guidesCountQuery);
@@ -50,7 +50,7 @@ if (isset($_SESSION['username'])) {
   }
 
   // Query to calculate the sum of 'Votes' column values for the given username
-  $votesSumQuery = "SELECT SUM(Votes) AS sum FROM guides WHERE Username = '$username'";
+  $votesSumQuery = "SELECT SUM(Votes) AS sum FROM guides WHERE Username = '$name'";
 
   // Execute the sum query
   $votesSumResult = mysqli_query($link, $votesSumQuery);
