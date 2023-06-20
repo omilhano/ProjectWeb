@@ -146,10 +146,10 @@ if (isset($_GET['username'])) {
 <body >
 <div class = "background-image">
   <header>
-    <a href = "../html/HomePageLogIN.html" class = "nav_logo"><img src = "../img/logo1.png"></a>
+    <a href = "../php/HomePageLogIN.php" class = "nav_logo"><img src = "../img/logo1.png"></a>
 
     <ul class = "navbar">
-        <li><a href = "../html/HomePageLogIN.html" class = "active" >Home</a></li>
+        <li><a href = "../php/HomePageLogIN.php" class = "active" >Home</a></li>
         <li><a href = "../php/GuidesPage.php">List of Guides</a></li>
         <li><a href = "../php/TravelersHubnew.php">Travelers Hub</a></li>
     </ul>
@@ -192,7 +192,7 @@ if (isset($_GET['username'])) {
             <div id = "footer-logo" class = "footer-col" >
                 <ol >
                   <div id = "logo">
-                    <a class = "a" href = "../html/HomePageLogIN.html"><img id = "logo1" src = "../img/logo1.png" style="width: 40%;"></a>
+                    <a class = "a" href = "../php/HomePageLogIN.php"><img id = "logo1" src = "../img/logo1.png" style="width: 40%;"></a>
                     <div class = "copyright"><i></i>Copyright © 2023 "Web Project" All rights reserved.</div>
                   </div>
                 </ol>
