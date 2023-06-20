@@ -163,7 +163,7 @@ body{
   </header>
 <!--Main-->
 <?php
-  $query = "SELECT id, Country, Location, Image, id_user FROM guides ORDER BY id DESC LIMIT 3";
+  $query = "SELECT id, Country, Location, Image, id_user, Control FROM guides ORDER BY id DESC LIMIT 3";
   
   $result = mysqli_query($link, $query);
   
@@ -186,7 +186,8 @@ body{
     </div>
   
     <div class="row">
-      <?php foreach ($guides as $guide) { ?>
+  <?php foreach ($guides as $guide) { ?>
+    <?php if ($guide['Control'] == 1) { ?>  
       <div id="box" class="col-lg-4 col-md-12 col-sm-12">
         <div id="left" data-cycle-slides="> div">
           <div><a href="guides_table.php?id=<?= $guide['id'] ?>">
@@ -198,6 +199,7 @@ body{
           </div>
         </div>
       </div>
+      <?php } ?>
       <?php } ?>
     </div>
   </div>
