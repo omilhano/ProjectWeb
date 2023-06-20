@@ -1,3 +1,4 @@
+
 <?php
 // Start the session
 session_start();
@@ -15,7 +16,7 @@ if (isset($_SESSION['username'])) {
     }
 
     // Query to retrieve the number of votes for the user
-    $query = "SELECT username, NumVotes, NumFollowers, NumGuides FROM user WHERE Email = '$username'";
+    $query = "SELECT ID, username, NumVotes, NumFollowers, NumGuides FROM user WHERE Email = '$username'";
 
     // Execute the query
     $result = mysqli_query($link, $query);
@@ -28,6 +29,7 @@ if (isset($_SESSION['username'])) {
         $Votes = $row['NumVotes'];
         $Followers = $row['NumFollowers'];
         $Guides = $row['NumGuides'];
+        $Userid = $row['ID'];
 
     } else {
         // Handle the case when the query fails
@@ -101,12 +103,85 @@ if (isset($_SESSION['username'])) {
     <div class="left-content">
       <div>
         <h1>My Guides</h1>
+        <label for="myComboBox">Edit or Delete a Guide:</label>
+          <select id="myComboBox">
+            <option value="">Guides</option>
+            
+            <?php
+              // Create a new connection
+              $link = mysqli_connect('localhost', 'root', '', 'travelwebsite2') or die("No connection");
 
+              // Check if the connection was successful
+              if (!$link) {
+                  die("Database connection failed: " . mysqli_connect_error());
+              }
+
+              // Fetch data from the database
+              $sql = "SELECT id, Location, id_user FROM guides WHERE id_user = $Userid";
+              $result = mysqli_query($link, $sql);
+
+              if (mysqli_num_rows($result) > 0) {
+                  // Output options as combo box options
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    $guideId = $row["id"];
+                    $location = $row["Location"];
+                    $editLink = "edit_guide.php?id=$guideId";
+                    $deleteLink = "delete_guide.php?id=$guideId";
+                    echo '<option value="' . $guideId . '">' . $location . '</option>';
+                    // echo '<button class="edit-button" onclick="window.location.href=\'' . $editLink . '\'">Edit</button>';
+                    // echo '<button class="delete-button" onclick="window.location.href=\'' . $deleteLink . '\'">Delete</button>';
+                    
+                  }
+                }
+
+              // Close the database connection
+              mysqli_close($link);
+
+              ?>
+             
+          </select>
+        
+          <button class="edit-button" onclick="edit_guide();">Edit</button>
+          <button class="delete-button" onclick="delete_guide();">Delete</button>
+          <script>
+            function edit_guide() {
+                var comboBox = document.getElementById('myComboBox');
+                //retun comboBox.value;
+                if (String(comboBox.value).length > 0)
+                  window.location.href = "guides_edit.php?guide_id=" + comboBox.value;
+                else
+                  return false;
+              }
+
+            function delete_guide() {
+
+              var comboBox = document.getElementById('myComboBox');
+                //retun comboBox.value;
+                if (String(comboBox.value).length > 0) {
+                  var result = confirm("Are you sure you want to delete Guide" + comboBox.options[comboBox.selectedIndex].textContent + "?");
+
+                  // Check the result
+                  if (result) {
+                    // User clicked "OK"
+                    // Perform the desired action
+                    console.log("Action confirmed");
+                    window.location.href = "guides_delete.php?guide_id=" + comboBox.value;
+
+                  } else {
+                    // User clicked "Cancel" or closed the dialog
+                    // Perform an alternative action or do nothing
+                    console.log("Action canceled");
+                  }
+                }
+              }
+
+          </script>
       </div>
     </div>
     <div class="right-content">
       <img src="../img/stockprofile.jpg" id="profile_pic"><br><br>
       <div><?= $name ?><br> Number of Votes: <?= $Votes ?><br>Number of Followers: <?= $Followers ?><br>Number of Guides: <?= $Guides ?></div>
+      <a class="button" href="../php/guides_form.php">Click Me</a>
     </div>
   </div>
  </div>
@@ -184,4 +259,14 @@ if (isset($_SESSION['username'])) {
   
 
   </script>
+
+<script>
+    // Handle change event of the combo box
+    document.getElementById('myComboBox').addEventListener('change', function() {
+      var selectedValue = this.value;
+      console.log('Selected value:', selectedValue);
+      // Perform any additional actions based on the selected value
+    });
+  </script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
