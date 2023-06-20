@@ -8,7 +8,7 @@ if (!$link) {
 
 $username = $_POST['username'];
 
-$query = "SELECT Admin FROM user WHERE Email = '$username'";
+$query = "SELECT Admin FROM user WHERE Username = '$username'";
 $result = mysqli_query($link, $query);
 
 // Check if the query was executed successfully
