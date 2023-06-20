@@ -258,6 +258,7 @@ if (isset($_SESSION['username'])) {
             </div>
         </div>
     </div>
+</div>
   <!--Footer--> 
       <div class = "clearfix">
         <footer class = "footer">
