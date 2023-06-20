@@ -123,6 +123,7 @@ if (!isset($_SESSION['form_token'])) {
                     $commenter = $comment_table['username']; //commenter é quem comenta 
                     $comment = $comment_table['comment']; //comentário em si
                     echo '<div class="comment">'; //criar o div que dá display dos comentarios
+                    echo '<h2>Comment Section: </h2>';
                     echo $commenter . ': '; //nome de quem comenta
                     echo $comment; //comentario em si 
                     echo '</div>'; //fecha div
