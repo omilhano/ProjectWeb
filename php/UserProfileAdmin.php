@@ -50,6 +50,30 @@ if (isset($_GET['username'])) {
         echo "Error: " . mysqli_error($link);
     }
 
+    $follower_username = $_SESSION['username'];
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') { //button is clicked
+      $following_username = $_GET['username'];
+      if ($following_username != $follower_username) { //can't follow yourself
+        $selector = "SELECT * FROM follow WHERE following_username = '$following_username' AND 
+          follower_username = '$follower_username'"; //check if connection exists
+        $istrue = mysqli_query($link, $selector);
+        if (mysqli_num_rows($istrue) <= 0) { //connection can't exist already, cant follow twice
+          $query = "INSERT INTO follow (follower_username, following_username)
+              VALUES ('$follower_username', '$following_username')";
+          $result = mysqli_query($link, $query); //update follow results
+          if ($result) {
+            $updatefollowers = "UPDATE user SET NumFollowers = NumFollowers + 1 WHERE username = '$following_username'";
+            $updatefollowers = mysqli_query($link, $updatefollowers);
+  
+            if (!$updatefollowers) {
+              echo "Failed to update follower count.";
+            }
+          } else {
+            echo "Failed to insert follow record.";
+          }
+        }
+      }
+    }
     // Close the connection
     mysqli_close($link);
 }
@@ -121,6 +145,11 @@ if (isset($_GET['username'])) {
     </div>
     <div class="right-content">
       <img src="../img/stockprofile.jpg" id="profile_pic"><br><br>
+      <div class="follow_button">
+              <form action="" method="post">
+                <button class="button">Follow me</button>
+              </form>
+      </div>
       <div><?= $name ?><br> Number of Votes: <?= $Votes ?><br>Number of Followers: <?= $Followers ?><br>Number of Guides: <?= $Guides ?></div>
     </div>
   </div>
