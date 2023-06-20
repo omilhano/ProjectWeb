@@ -74,7 +74,7 @@ if (isset($_SESSION['username'])) {
 
 .background-image{
   background-color: rgba(128, 128, 128, 0.644);
-  background-image: url('../img/Snow-mountains.jpg');
+  background-image: url('../img/aurora-bg.jpg');
   background-blend-mode: multiply;
   background-size: cover;
   background-repeat: no-repeat;
@@ -93,7 +93,7 @@ if (isset($_SESSION['username'])) {
     <ul class = "navbar">
         <li><a href = "../html/HomePageAdmin.html" class = "active" >Home</a></li>
         <li><a href = "../php/GuidesPageAdmin.php">List of Guides</a></li>
-        <li><a href = "../ProfilePageAdmin.php">Profile Page</a></li> 
+        <li><a href = "profilepage.html">Profile Page</a></li> 
         <li><a href = "../php/BackOffice.php">BackOffice</a></li>
     </ul>
 
@@ -106,7 +106,8 @@ if (isset($_SESSION['username'])) {
 
     <div class = "nav_main">
       <form action="logout.php" method="post">
-        <button type="submit" name="logout">Logout</button>
+      <a href="#" class = "user"><i class="ri-logout-box-r-line"></i>
+        <button id="login-button" name="logbutton" class="nav-link">Logout</button></a>
       </form>
       <div class="bx bx-menu" id = "menu-icon"></div>
     </div>
@@ -165,7 +166,6 @@ if (isset($_SESSION['username'])) {
               <div class = "f"><a href = "../php/GuidesPageAdmin.php">list of guides</a></div>
               <div class = "f"><a href = "../php/TravelersHubnewAdmin">Travelers Hub</a></div>
               <div class = "f"><a href = "../php/BackOffice.php">BackOffice</div>
-              <div class = "f"><a href = "../php/ProfilepageAdmin.php">profile page</a></div>
             </ol>
         </div>
         <div id = "footer-mid" class = "footer-col">

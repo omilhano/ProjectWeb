@@ -67,7 +67,7 @@ if (isset($_SESSION['username'])) {
       <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
       <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
       <link rel="stylesheet" href="../css/HomePage.css">
-      <link rel="stylesheet" href="../css/GuidesPage.css">  
+      <link rel="stylesheet" href="../css/BackOffice.css">  
       <link rel="stylesheet" href="../css/footer.css">    
       <link rel = "stylesheet" href="../css/navbar.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -89,7 +89,7 @@ if (isset($_SESSION['username'])) {
 
     .background-image{
         background-color: rgba(128, 128, 128, 0.644);
-        background-image: url('../img/bg-image.jpg');
+        background-image: url('../img/matrix-bg.png');
         background-blend-mode: multiply;
         background-size: cover;
         background-repeat: no-repeat;
@@ -199,7 +199,8 @@ if (isset($_SESSION['username'])) {
 
       <div class = "nav_main">
         <form action="logout.php" method="post">
-          <button type="submit" name="logout">Logout</button>
+        <a href="#" class = "user"><i class="ri-logout-box-r-line"></i>
+        <button id="login-button" name="logbutton" class="nav-link">Logout</button></a>
         </form>
         <div class="bx bx-menu" id = "menu-icon"></div>
       </div>
@@ -229,14 +230,13 @@ if (isset($_SESSION['username'])) {
                         <form action="Control.php" method="post" class="control-form">
                             <input type="hidden" name="guide_id" value="<?= $user['id'] ?>">
                             <button type="submit" name="add" class="add-button">
-                                <i class="fas fa-thumbs-up"></i> Add
+                            <i class="ri-check-line"></i>
                             </button>
-                        </form>
-                        <div class="control-count"><?= $user['Control'] ?> Control</div>
+                        </form>                       
                         <form action="Control.php" method="post" class="control-form">
                             <input type="hidden" name="guide_id" value="<?= $user['id'] ?>">
                             <button type="submit" name="delete" class="delete-button">
-                                <i class="fas fa-thumbs-down"></i> Delete
+                                X 
                             </button>
                         </form>
                     </div>
@@ -255,7 +255,6 @@ if (isset($_SESSION['username'])) {
             </div>
         </div>
     </div>
-  </div>
   <!--Footer--> 
       <div class = "clearfix">
         <footer class = "footer">

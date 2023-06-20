@@ -89,7 +89,7 @@ if (isset($_SESSION['username'])) {
 
     .background-image{
         background-color: rgba(128, 128, 128, 0.644);
-        background-image: url('../img/bg-image.jpg');
+        background-image: url('../img/forest-bg.jpg');
         background-blend-mode: multiply;
         background-size: cover;
         background-repeat: no-repeat;
@@ -188,7 +188,7 @@ if (isset($_SESSION['username'])) {
           <li><a href = "../html/HomePageAdmin.html" class = "active" >Home</a></li>
           <li><a href = "../php/GuidesPageAdmin.php">List of Guides</a></li>
           <li><a href = "../php/BackOffice.php">BackOffice</a></li>
-          <li><a href = "../php/ProfilepageAdmin.php">BackOffice</a></li>
+
       </ul>
 
       <li>
@@ -200,7 +200,8 @@ if (isset($_SESSION['username'])) {
 
       <div class = "nav_main">
         <form action="logout.php" method="post">
-          <button type="submit" name="logout">Logout</button>
+          <a href="#" class = "user"><i class="ri-logout-box-r-line"></i>
+          <button id="login-button" name="logbutton" class="nav-link">Logout</button></a>
         </form>
         <div class="bx bx-menu" id = "menu-icon"></div>
       </div>
@@ -231,14 +232,14 @@ if (isset($_SESSION['username'])) {
                         <form action="vote.php" method="post" class="vote-form">
                             <input type="hidden" name="guide_id" value="<?= $user['id'] ?>">
                             <button type="submit" name="upvote" class="upvote-button">
-                                <i class="fas fa-thumbs-up"></i> Upvote
+                            <i class="ri-thumb-up-fill"></i>
                             </button>
                         </form>
                         <div class="vote-count"><?= $user['Votes'] ?> votes</div>
                         <form action="vote.php" method="post" class="vote-form">
                             <input type="hidden" name="guide_id" value="<?= $user['id'] ?>">
                             <button type="submit" name="downvote" class="downvote-button">
-                                <i class="fas fa-thumbs-down"></i> Downvote
+                            <i class="ri-thumb-down-fill"></i>
                             </button>
                         </form>
                     </div>
@@ -257,7 +258,6 @@ if (isset($_SESSION['username'])) {
             </div>
         </div>
     </div>
-  </div>
   <!--Footer--> 
       <div class = "clearfix">
         <footer class = "footer">
@@ -286,7 +286,7 @@ if (isset($_SESSION['username'])) {
                 <div class = "f"><a href = "../php/GuidesPageAdmin.php">list of guides</a></div>
                 <div class = "f"><a href = "../php/TravelersHubnewAdmin.php">Travelers Hub</div>
                 <div class = "f"><a href = "../php/BackOffice.php">BackOffice</div>
-              <div class = "f"><a href = "../php/ProfilepageAdmin.php">profile page</a></div>
+                <div class = "f"><a href = "../html/profilepage.html">profile page</a></div>
               </ol>
           </div>
           <div id = "footer-mid" class = "footer-col">

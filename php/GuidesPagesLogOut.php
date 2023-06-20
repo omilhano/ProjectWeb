@@ -89,7 +89,7 @@ if (isset($_SESSION['username'])) {
 
     .background-image{
         background-color: rgba(128, 128, 128, 0.644);
-        background-image: url('../img/bg-image.jpg');
+        background-image: url('../img/forest-bg.jpg');
         background-blend-mode: multiply;
         background-size: cover;
         background-repeat: no-repeat;
@@ -239,7 +239,7 @@ if (isset($_SESSION['username'])) {
         <?php foreach ($users as $user) { ?>
             <?php if ($user['Control'] == 1) { ?> <!-- Add this condition to check the Control variable -->
                 <div class="box">
-                    <a href="guides_tablelogout.php?id=<?= $user['id'] ?>">
+                    <a href="guides_table.php?id=<?= $user['id'] ?>">
                         <img class="link_img" src="img_db/<?= $user['Image'] ?>">
                     </a><br>
                     <p class="guide_title"><?= $user['Country'] ?><br></p>
@@ -264,7 +264,6 @@ if (isset($_SESSION['username'])) {
             </div>
         </div>
     </div>
-</div>
   <!--Footer--> 
       <div class = "clearfix">
         <footer class = "footer">
