@@ -20,7 +20,11 @@
 
     include 'guides_config.php';
     include '../php/login.php';
-
+    $user_online = $_SESSION['username'];
+    //creates unique token, used for comment submission
+    if (!isset($_SESSION['form_token'])) {
+        $_SESSION['form_token'] = bin2hex(random_bytes(32));
+    }
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
 
