@@ -125,10 +125,10 @@ body{
 <body >
 <div class = "background-image">
   <header>
-    <a href = "../html/HomePageLogIN.html" class = "nav_logo"><img src = "../img/logo1.png"></a>
+    <a href = "../php/HomePageLogIN.php" class = "nav_logo"><img src = "../img/logo1.png"></a>
 
     <ul class = "navbar">
-        <li><a href = "../html/HomePageLogIN.html" class = "active" >Home</a></li>
+        <li><a href = "../php/HomePageLogIN.php" class = "active" >Home</a></li>
         <li><a href = "../php/GuidesPage.php">List of Guides</a></li>
         <li><a href = "../php/TravelersHubnew.php">Social Features</a></li>
         <li><a href = "../php/Profilepage.php">Profile Page</a></li>
@@ -193,7 +193,7 @@ body{
             <div id = "footer-logo" class = "footer-col" >
                 <ol >
                   <div id = "logo">
-                    <a class = "a" href = "../html/HomePageLogIN.html"><img id = "logo1" src = "../img/logo1.png"></a>
+                    <a class = "a" href = "../php/HomePageLogIN.php"><img id = "logo1" src = "../img/logo1.png"></a>
                     <div class = "copyright"><i></i>Copyright © 2023 "Web Project" All rights reserved.</div>
                   </div>
                 </ol>
@@ -203,16 +203,16 @@ body{
               <ol>
                 <div class = "f"><a href = "../html/Introduction.html">our team</a></div>
                 <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">contact us</a></div>
-                <div class = "f"><a href = "#">privacy policy</a></div>
-                <div class = "f"><a href = "#">terms of services</a></div>
+                <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">privacy policy</a></div>
+                <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">terms of services</a></div>
               </ol>
           </div>
           <div id = "footer-mid" class = "footer-col">
             <h4>menu</h4>
             <ol>
-              <div class = "f"><a href = "../html/guides_page.html">list of guides</a></div>
-              <div class = "f"><a href = "#">social features</a></div>
-              <div class = "f"><a href = "../html/profilepage.html">profile page</a></div>
+              <div class = "f"><a href = "../php/Guidespage.php">list of guides</a></div>
+              <div class = "f"><a href = "../php/TravelersHubnew.php">travelers hub</a></div>
+              <div class = "f"><a href = "../php/Profilepage.php">profile page</a></div>
             </ol>
         </div>
         <div id = "footer-mid" class = "footer-col">
