@@ -114,6 +114,7 @@ if (!isset($_SESSION['form_token'])) {
             </div>
         </div>";
         echo '<div class="comment_section">';
+            echo '<h2>Comment Section: </h2>';
             $counter_comments = 0; //counter dos comentarios que vai iterar e percorrer comentarios
             $get_comment = "SELECT * FROM comment_section WHERE id_guide = '$id' ORDER BY id_comment DESC LIMIT 5";
             //linha acima seleciona os coments que correspondem a cada guide individualmente por ordem descrescente limite 5 cada post
@@ -123,7 +124,6 @@ if (!isset($_SESSION['form_token'])) {
                     $commenter = $comment_table['username']; //commenter é quem comenta 
                     $comment = $comment_table['comment']; //comentário em si
                     echo '<div class="comment">'; //criar o div que dá display dos comentarios
-                    echo '<h2>Comment Section: </h2>';
                     echo $commenter . ': '; //nome de quem comenta
                     echo $comment; //comentario em si 
                     echo '</div>'; //fecha div
