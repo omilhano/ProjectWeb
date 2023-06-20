@@ -164,7 +164,7 @@ if (isset($_SESSION['username'])) {
             <h4>menu</h4>
             <ol>
               <div class = "f"><a href = "../php/GuidesPageAdmin.php">list of guides</a></div>
-              <div class = "f"><a href = "../php/TravelersHubnewAdmin">Travelers Hub</a></div>
+              <div class = "f"><a href = "../php/TravelersHubnewAdmin.php">Travelers Hub</a></div>
               <div class = "f"><a href = "../php/ProfilepageAdmin.php">Profile Page</a></div>
               <div class = "f"><a href = "../php/BackOffice.php">BackOffice</div>
             </ol>
