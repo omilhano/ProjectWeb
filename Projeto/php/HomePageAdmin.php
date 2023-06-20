@@ -130,7 +130,7 @@ body{
     <ul class = "navbar">
         <li><a href = "../php/HomePageAdmin.php" class = "active" >Home</a></li>
         <li><a href = "../php/GuidesPageAdmin.php">List of Guides</a></li>
-        <li><a href = "../php/ProfilepageAdmin.php">Profile Page</a></li>
+        <li><a href = "../php/Profilepage.php">Profile Page</a></li>
         <li><a href = "../php/BackOffice.php">BackOffice</a></li>
     </ul>
 
@@ -167,7 +167,8 @@ body{
     </div>
   
     <div class="row">
-      <?php foreach ($guides as $guide) { ?>
+    <?php foreach ($guides as $guide) { ?>
+    <?php if ($guide['Control'] == 1) { ?>  
       <div id="box" class="col-lg-4 col-md-12 col-sm-12">
         <div id="left" data-cycle-slides="> div">
           <div><a href="guides_table.php?id=<?= $guide['id'] ?>">
@@ -179,6 +180,7 @@ body{
           </div>
         </div>
       </div>
+      <?php } ?>
       <?php } ?>
     </div>
   </div>
