@@ -113,7 +113,7 @@ if (isset($_SESSION['username'])) {
 
     .background-image {
       background-color: rgba(128, 128, 128, 0.644);
-      background-image: url('../img/Snow-mountains.jpg');
+      background-image: url('../img/sakura-bg.jpg');
       background-blend-mode: multiply;
       background-size: cover;
       background-repeat: no-repeat;
@@ -142,7 +142,8 @@ if (isset($_SESSION['username'])) {
 
       <div class="nav_main">
         <form action="logout.php" method="post">
-          <button type="submit" name="logout">Logout</button>
+          <a href="#" class = "user"><i class="ri-logout-box-r-line"></i>
+          <button id="login-button" name="logbutton" class="nav-link">Logout</button></a>
         </form>
         <div class="bx bx-menu" id="menu-icon"></div>
       </div>
