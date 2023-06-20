@@ -1,0 +1,193 @@
+/*Solve .nav_main for @media (max-width: 574)*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+html{
+    --bg-color:#24262b ;
+    --text-color: #fff; 
+/* "--" neste caso --> cria a variável "--text-color" para mais tarde podermos chammar a varável sempre que quisermos essa cor num elemento*/
+    --main-color: #ffa62b;
+}
+
+body{
+    min-height: 100vh;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+header{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 28px 12%;
+    transition: all 0.3s ease;  
+}
+
+.nav_logo{
+    width: 7.0rem; /*rem n varia com dispalay*/
+    display: flex;
+    align-items: center;
+    transition: all 0.3 ease;
+}
+
+.nav_logo img{
+    width: 100%;
+    border: none;
+    margin-right: 3px;
+}
+
+.nav_logo img:hover{
+    border: none;
+    transform: scale(1.1);
+}
+
+.navbar{
+    display: flex; /*mete os main links lado a lado*/
+}
+
+.navbar a{
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    margin: 0 30px;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover{
+    color: #82C0CC;
+}
+
+.navbar a.active{ 
+/*para chamarmos uma class dentro de um container q já tamos a usar <a class = "active"> temos de meter a class junto ao container: a.active*/
+    color: var(--main-color);
+
+}
+
+.nav_main{
+    display: flex;
+    align-items: center;
+}
+
+.nav_main a{
+    margin-right: 25px;
+    margin-left: 10px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+}
+
+.user i{
+    color: var(--main-color);
+    font-size: 22px;
+    margin-right: 7px;
+}
+
+.nav_main .user:hover{
+    color: var(--main-color);
+}
+
+.nav_main .register:hover{
+    color: #489FB5;
+}
+
+
+#menu-icon{
+    font-size: 35px;
+    color: var(--text-color);
+    cursor: pointer; 
+    /*Muda forma do cursor para "dedo" quando passa por cima do elemento*/
+    z-index: 1001;
+    display: none;
+}
+
+/* LOG IN */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    max-width: 400px;
+    /* Could be more or less, depending on screen size */
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), 0 4px 6px rgba(0,0,0,0.45);
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    width: 20px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal_body{
+    display: block;
+  }
+  
+  .formbox{
+    margin-bottom: 10px;
+  }
+  
+ .modal_body{
+    transition: all 0.3 ease;
+ }
+
+ .modal_body .submit_button{
+    border-radius: 10%;
+    width: 20%;
+  }
+
+  .submit_button:hover{
+    transform: scale(0.9);
+  }
+
+/*Responsive ---> needs to be in html file if using bootstrap*/
