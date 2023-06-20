@@ -2,9 +2,10 @@
 // Start the session
 session_start();
 
-// Check if the username is set in the session
-if (isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
+// Check if the name is set in the GET parameter and is not empty
+if (isset($_GET['username'])) {
+    $name = $_GET['username'];
+
     // Create a new connection
     $link = mysqli_connect('localhost', 'root', '', 'travelwebsite2') or die("No connection");
 
@@ -13,44 +14,46 @@ if (isset($_SESSION['username'])) {
         die("Database connection failed: " . mysqli_connect_error());
     }
 
-    // Fetch users from the database
-    $query = "SELECT id, username, email, NumVotes, NumFollowers, NumGuides FROM user";
-    $result = mysqli_query($link, $query);
+    // Prepare the SQL query using prepared statements
+    $query = "SELECT username, NumVotes, NumFollowers, NumGuides FROM user WHERE username = ?";
 
-    // Store the users in an array
-    $users = array();
-    if (mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            $users[] = $row;
+    // Create a prepared statement
+    $stmt = mysqli_stmt_init($link);
+
+    // Check if the prepared statemen   t was successfully initialized
+    if (mysqli_stmt_prepare($stmt, $query)) {
+        // Bind the parameter to the prepared statement
+        mysqli_stmt_bind_param($stmt, "s", $name);
+
+        // Execute the prepared statement
+        mysqli_stmt_execute($stmt);
+
+        // Get the result
+        $result = mysqli_stmt_get_result($stmt);
+
+        // Check if the query was successful and fetch the row from the result
+        if ($result && $row = mysqli_fetch_assoc($result)) {
+            // Retrieve the profile-stats
+            $email = $row['username'];
+            $Votes = $row['NumVotes'];
+            $Followers = $row['NumFollowers'];
+            $Guides = $row['NumGuides'];
+            // Use the retrieved profile-stats as needed
+            // For example, you can echo it or assign it to a variable for further use
+        } else {
+            echo "No results found.";
         }
+
+        // Close the prepared statement
+        mysqli_stmt_close($stmt);
+    } else {
+        echo "Error: " . mysqli_error($link);
     }
 
-    // Filter users based on search query
-    if (isset($_GET['search'])) {
-        // Fetch users from the database
-        $query = "SELECT id, username, email, NumVotes, NumFollowers, NumGuides FROM user";
-        $result = mysqli_query($link, $query);
-    
-        // Store the users in an array
-        $users = array();
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $users[] = $row;
-            }
-        }
-    
-        // Filter users based on search query
-        $searchQuery = strtolower($_GET['search']);
-        $filteredUsers = array_filter($users, function ($user) use ($searchQuery) {
-            return strpos(strtolower($user['username']), $searchQuery) !== false;
-        });
-    
-        // Update the users array with the filtered results
-        $users = $filteredUsers;
-    }
+    // Close the connection
+    mysqli_close($link);
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,9 +65,10 @@ if (isset($_SESSION['username'])) {
     <title>Turistic</title>
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
-    <link rel="stylesheet" href="../css/TravelersHub.css">       
+    <link rel="stylesheet" href="../css/profilepage.css">
     <link rel="stylesheet" href="../css/footer.css">    
     <link rel = "stylesheet" href="../css/navbar.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" type = "text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -80,28 +84,23 @@ if (isset($_SESSION['username'])) {
   background-repeat: no-repeat;
   min-height: 100vh;
   overflow-y: auto; 
-      }
+}
 
 </style>
+
 <!--MENU-->
 </head>
 <body >
 <div class = "background-image">
   <header>
-    <a href = "../html/HomePageLogIN.html" class = "nav_logo"><img src = "../img/logo1.png"></a>
+    <a href = "../html/HomePageAdmin.html" class = "nav_logo"><img src = "../img/logo1.png"></a>
 
     <ul class = "navbar">
-        <li><a href = "../html/HomePageLogIN.html" class = "active" >Home</a></li>
-        <li><a href = "../php/GuidesPage.php">List of Guides</a></li>
-        <li><a href = "profilepage.html">Profile Page</a></li>
+        <li><a href = "../html/HomePageAdmin.html" class = "active" >Home</a></li>
+        <li><a href = "../php/GuidesPageAdmin.php">List of Guides</a></li>
+        <li><a href = "../php/TravelersHubnewAdmin.php">Travelers Hub</a></li>
+        <li><a href = "../php/BackOffice.php">BackOffice</a></li>
     </ul>
-
-    <li>
-        <form class="search-form" action="" method="GET"> <!-- Updated the form action to empty value -->
-            <input type="text" name="search" id="searchInput" placeholder="Search..." value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>"> <!-- Added value attribute to retain the search query -->
-            <button type="submit"><i class="fas fa-search"></i></button>
-        </form>
-    </li>
 
     <div class = "nav_main">
       <form action="logout.php" method="post">
@@ -112,30 +111,21 @@ if (isset($_SESSION['username'])) {
   </header>
 <!--Main-->
 <div class="wrapper">
-    <div class="content">
-        <div class="main-content">
-            <div class="box-container">
-                <?php if (!empty($users)) { ?>
-                    <?php foreach ($users as $user) { ?>
-                        <div class="box">
-                            <div>
-                            <a href="Userprofile.php?username=<?= $user['username'] ?>">
-                                <?= $user['username'] ?>
-                            </a><br>
-                                Number of Votes: <?= $user['NumVotes'] ?><br>
-                                Number of Followers: <?= $user['NumFollowers'] ?><br>
-                                Number of Guides: <?= $user['NumGuides'] ?>
-                            </div>
-                        </div>
-                    <?php } ?>
-                <?php } else { ?>
-                    <p>No results found.</p>
-                <?php } ?>
-            </div>
-        </div>
-    </div>
-</div>
+ <div class="content">
+  <div class="main-content">
+    <div class="left-content">
+      <div>
+        <h1>My Guides</h1>
 
+      </div>
+    </div>
+    <div class="right-content">
+      <img src="../img/stockprofile.jpg" id="profile_pic"><br><br>
+      <div><?= $name ?><br> Number of Votes: <?= $Votes ?><br>Number of Followers: <?= $Followers ?><br>Number of Guides: <?= $Guides ?></div>
+    </div>
+  </div>
+ </div>
+</div>
 <!--Footer--> 
     <div class = "clearfix">
       <footer class = "footer">
@@ -144,7 +134,7 @@ if (isset($_SESSION['username'])) {
             <div id = "footer-logo" class = "footer-col" >
                 <ol >
                   <div id = "logo">
-                    <a class = "a" href = "../html/HomePageLogIN.html"><img id = "logo1" src = "../img/logo1.png" style="width: 40%;"></a>
+                    <a class = "a" href = "../html/HomePageAdmin.html"><img id = "logo1" src = "../img/logo1.png" style="width: 40%;"></a>
                     <div class = "copyright"><i></i>Copyright © 2023 "Web Project" All rights reserved.</div>
                   </div>
                 </ol>
@@ -152,7 +142,7 @@ if (isset($_SESSION['username'])) {
             <div id = "footer-mid" class = "footer-col" >
               <h4>company</h4>
               <ol>
-                <div class = "f"><a href = "../html/Introduction.html">our team</a></div>
+                <div class = "f"><a href = "../html/IntroductionAdmin.html">our team</a></div>
                 <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">contact us</a></div>
                 <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">privacy policy</a></div>
                 <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">terms of services</a></div>
@@ -161,8 +151,9 @@ if (isset($_SESSION['username'])) {
           <div id = "footer-mid" class = "footer-col">
             <h4>menu</h4>
             <ol>
-              <div class = "f"><a href = "../php/GuidesPage.php">list of guides</a></div>
-              <div class = "f"><a href = "../php/TravelersHubnew.php">social features</a></div>
+              <div class = "f"><a href = "../php/GuidesPageAdmin.php">list of guides</a></div>
+              <div class = "f"><a href = "../php/TravelersHubnewAdmin.php">travelers hub</a></div>
+              <div class = "f"><a href = "../php/BackOffice.php">BackOffice</div>
             </ol>
         </div>
         <div id = "footer-mid" class = "footer-col">
@@ -206,8 +197,4 @@ if (isset($_SESSION['username'])) {
         var element = document.querySelector('.row1');
         element.classList.add('active');
     });
-  
-
-    </script>
-</body>
-</html>
+</script>

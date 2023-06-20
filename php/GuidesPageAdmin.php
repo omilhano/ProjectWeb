@@ -182,11 +182,12 @@ if (isset($_SESSION['username'])) {
   <body >
   <div class = "background-image">
     <header>
-      <a href = "../html/HomePage.html" class = "nav_logo"><img src = "../img/logo1.png"></a>
+      <a href = "../html/HomePageAdmin.html" class = "nav_logo"><img src = "../img/logo1.png"></a>
 
       <ul class = "navbar">
-          <li><a href = "../html/HomePage.html" class = "active" >Home</a></li>
-          <li><a href = "../php/GuidesPagesLogOut.php">List of Guides</a></li>
+          <li><a href = "../html/HomePageAdmin.html" class = "active" >Home</a></li>
+          <li><a href = "../php/GuidesPageAdmin.php">List of Guides</a></li>
+          <li><a href = "../php/BackOffice.php">BackOffice</a></li>
 
       </ul>
 
@@ -198,31 +199,11 @@ if (isset($_SESSION['username'])) {
       </li>
 
       <div class = "nav_main">
-      <a href="#" class = "user"><i class="ri-user-fill"></i>
-        <button id="login-button" name="logbutton" class="nav-link">Login</button>
-        <div id="file_modal" class="modal">
-            <div class="modal-content">
-                <div class="modal_header" style="padding-bottom: 10px;">
-                    <span id="close-modal" class="close">&times;</span>  
-                    <span>Access your Account</span>
-                </div>
-                <form class="modal_body" action="../php/login.php" method="POST">
-
-                  <label for="username">Email:</label>
-                  <input type="text" name="username" id="username" required>
-              
-                  <label for="password">Password:</label>
-                  <input type="password" name="password" id="password" required>
-              
-                  <button type="submit">Submit</button>
-
-                </form>
-            </div>
-        </div>
-      </a>
-      <a href="../html/Register_Page.html" class = "register">Register</a>
-      <div class="bx bx-menu" id = "menu-icon"></div>
-    </div>
+        <form action="logout.php" method="post">
+          <button type="submit" name="logout">Logout</button>
+        </form>
+        <div class="bx bx-menu" id = "menu-icon"></div>
+      </div>
     </header>
 
 
@@ -247,7 +228,19 @@ if (isset($_SESSION['username'])) {
 
                     <!-- Add the buttons for upvoting and downvoting -->
                     <div class="vote-buttons">
+                        <form action="vote.php" method="post" class="vote-form">
+                            <input type="hidden" name="guide_id" value="<?= $user['id'] ?>">
+                            <button type="submit" name="upvote" class="upvote-button">
+                                <i class="fas fa-thumbs-up"></i> Upvote
+                            </button>
+                        </form>
                         <div class="vote-count"><?= $user['Votes'] ?> votes</div>
+                        <form action="vote.php" method="post" class="vote-form">
+                            <input type="hidden" name="guide_id" value="<?= $user['id'] ?>">
+                            <button type="submit" name="downvote" class="downvote-button">
+                                <i class="fas fa-thumbs-down"></i> Downvote
+                            </button>
+                        </form>
                     </div>
                 </div>
                 <?php $counter++; ?>
@@ -280,16 +273,19 @@ if (isset($_SESSION['username'])) {
               <div id = "footer-mid" class = "footer-col" >
                 <h4>company</h4>
                 <ol>
-                  <div class = "f"><a href = "../html/Introduction.html">our team</a></div>
+                  <div class = "f"><a href = "../html/IntroductionAdmin.html">our team</a></div>
                   <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">contact us</a></div>
-                  <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0"">privacy policy</a></div>
-                  <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0"">terms of services</a></div>
+                  <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">privacy policy</a></div>
+                  <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">terms of services</a></div>
                 </ol>
             </div>
             <div id = "footer-mid" class = "footer-col">
               <h4>menu</h4>
               <ol>
-                <div class = "f"><a href = "../html/Homepage.html">HomePage</a></div>
+                <div class = "f"><a href = "../php/GuidesPageAdmin.php">list of guides</a></div>
+                <div class = "f"><a href = "../php/TravelersHubnewAdmin.php">Travelers Hub</div>
+                <div class = "f"><a href = "../php/BackOffice.php">BackOffice</div>
+                <div class = "f"><a href = "../html/profilepage.html">profile page</a></div>
               </ol>
           </div>
           <div id = "footer-mid" class = "footer-col">
@@ -332,56 +328,6 @@ if (isset($_SESSION['username'])) {
 document.addEventListener('DOMContentLoaded', function() {
         var element = document.querySelector('.row1');
         element.classList.add('active');
-    });
-
-//Log in
-    // Get the modal
-    var modal = document.getElementById("file_modal");
-
-    // Get the button that opens the modal
-    var btn = document.getElementById("login-button");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on the button, open the modal
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-
-    // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-            }
-    // Checks if password corresponds to the user
-    function checkPassword() {
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-        if (password === "mypassword") {
-            // correct password, do something
-        } else {
-            // incorrect password, update error message
-            var errorElement = document.getElementById("password-error");
-            errorElement.textContent = "Incorrect password. Please try again.";
-        }
-    }
-    // This part removes the text from the modal when it gets closed
-    $('#password-error').text('');
-
-    $(".close").click(function() {
-        $('#password-error').text('');
-        $("#file_modal").css("display", "none");
-    });
-    document.getElementById("close-modal").addEventListener("click", function() {
-        document.getElementById("username").value = "";
-        document.getElementById("password").value = "";
     });
     </script>
     

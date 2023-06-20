@@ -88,12 +88,13 @@ if (isset($_SESSION['username'])) {
 <body >
 <div class = "background-image">
   <header>
-    <a href = "../html/HomePageLogIN.html" class = "nav_logo"><img src = "../img/logo1.png"></a>
+    <a href = "../html/HomePageAdmin.html" class = "nav_logo"><img src = "../img/logo1.png"></a>
 
     <ul class = "navbar">
-        <li><a href = "../html/HomePageLogIN.html" class = "active" >Home</a></li>
-        <li><a href = "../php/GuidesPage.php">List of Guides</a></li>
-        <li><a href = "profilepage.html">Profile Page</a></li>
+        <li><a href = "../html/HomePageAdmin.html" class = "active" >Home</a></li>
+        <li><a href = "../php/GuidesPageAdmin.php">List of Guides</a></li>
+        <li><a href = "profilepage.html">Profile Page</a></li> 
+        <li><a href = "../php/BackOffice.php">BackOffice</a></li>
     </ul>
 
     <li>
@@ -119,7 +120,7 @@ if (isset($_SESSION['username'])) {
                     <?php foreach ($users as $user) { ?>
                         <div class="box">
                             <div>
-                            <a href="Userprofile.php?username=<?= $user['username'] ?>">
+                            <a href="UserprofileAdmin.php?username=<?= $user['username'] ?>">
                                 <?= $user['username'] ?>
                             </a><br>
                                 Number of Votes: <?= $user['NumVotes'] ?><br>
@@ -144,7 +145,7 @@ if (isset($_SESSION['username'])) {
             <div id = "footer-logo" class = "footer-col" >
                 <ol >
                   <div id = "logo">
-                    <a class = "a" href = "../html/HomePageLogIN.html"><img id = "logo1" src = "../img/logo1.png" style="width: 40%;"></a>
+                    <a class = "a" href = "../html/HomePageAdmin.html"><img id = "logo1" src = "../img/logo1.png" style="width: 40%;"></a>
                     <div class = "copyright"><i></i>Copyright © 2023 "Web Project" All rights reserved.</div>
                   </div>
                 </ol>
@@ -152,7 +153,7 @@ if (isset($_SESSION['username'])) {
             <div id = "footer-mid" class = "footer-col" >
               <h4>company</h4>
               <ol>
-                <div class = "f"><a href = "../html/Introduction.html">our team</a></div>
+                <div class = "f"><a href = "../html/IntroductionAdmin.html">our team</a></div>
                 <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">contact us</a></div>
                 <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">privacy policy</a></div>
                 <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">terms of services</a></div>
@@ -161,8 +162,9 @@ if (isset($_SESSION['username'])) {
           <div id = "footer-mid" class = "footer-col">
             <h4>menu</h4>
             <ol>
-              <div class = "f"><a href = "../php/GuidesPage.php">list of guides</a></div>
-              <div class = "f"><a href = "../php/TravelersHubnew.php">social features</a></div>
+              <div class = "f"><a href = "../php/GuidesPageAdmin.php">list of guides</a></div>
+              <div class = "f"><a href = "../php/TravelersHubnewAdmin">Travelers Hub</a></div>
+              <div class = "f"><a href = "../php/BackOffice.php">BackOffice</div>
             </ol>
         </div>
         <div id = "footer-mid" class = "footer-col">

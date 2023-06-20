@@ -7,7 +7,7 @@ if (isset($_GET['username'])) {
     $name = $_GET['username'];
 
     // Create a new connection
-    $link = mysqli_connect('localhost', 'root', '', 'travelwebsite') or die("No connection");
+    $link = mysqli_connect('localhost', 'root', '', 'travelwebsite2') or die("No connection");
 
     // Check if the connection was successful
     if (!$link) {
@@ -65,9 +65,9 @@ if (isset($_GET['username'])) {
     <title>Turistic</title>
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
-    <link rel="stylesheet" href="profilepage.css">
-    <link rel="stylesheet" href="footer.css">    
-    <link rel = "stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="../css/profilepage.css">
+    <link rel="stylesheet" href="../css/footer.css">    
+    <link rel = "stylesheet" href="../css/navbar.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" type = "text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
@@ -78,13 +78,13 @@ if (isset($_GET['username'])) {
 
 .background-image{
   background-color: rgba(128, 128, 128, 0.644);
-  background-image: url('Snow-mountains.jpg');
+  background-image: url('../img/Snow-mountains.jpg');
   background-blend-mode: multiply;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
   overflow-y: auto; 
-      }
+}
 
 </style>
 
@@ -93,12 +93,12 @@ if (isset($_GET['username'])) {
 <body >
 <div class = "background-image">
   <header>
-    <a href = "HomePageLogIN.html" class = "nav_logo"><img src = "logo1.png"></a>
+    <a href = "../html/HomePageLogIN.html" class = "nav_logo"><img src = "../img/logo1.png"></a>
 
     <ul class = "navbar">
-        <li><a href = "HomePageLogIN.html" class = "active" >Home</a></li>
-        <li><a href = "guides_page.html">List of Guides</a></li>
-        <li><a href = "TravelersHub.html">Travelers Hub</a></li>
+        <li><a href = "../html/HomePageLogIN.html" class = "active" >Home</a></li>
+        <li><a href = "../php/GuidesPage.php">List of Guides</a></li>
+        <li><a href = "../php/TravelersHubnew.php">Travelers Hub</a></li>
     </ul>
 
     <div class = "nav_main">
@@ -119,7 +119,7 @@ if (isset($_GET['username'])) {
       </div>
     </div>
     <div class="right-content">
-      <img src="stockprofile.jpg" id="profile_pic"><br><br>
+      <img src="../img/stockprofile.jpg" id="profile_pic"><br><br>
       <div><?= $name ?><br> Number of Votes: <?= $Votes ?><br>Number of Followers: <?= $Followers ?><br>Number of Guides: <?= $Guides ?></div>
     </div>
   </div>
@@ -133,7 +133,7 @@ if (isset($_GET['username'])) {
             <div id = "footer-logo" class = "footer-col" >
                 <ol >
                   <div id = "logo">
-                    <a class = "a" href = "HomePageLogIN.html"><img id = "logo1" src = "logo1.png" style="width: 40%;"></a>
+                    <a class = "a" href = "../html/HomePageLogIN.html"><img id = "logo1" src = "../img/logo1.png" style="width: 40%;"></a>
                     <div class = "copyright"><i></i>Copyright © 2023 "Web Project" All rights reserved.</div>
                   </div>
                 </ol>
@@ -141,17 +141,17 @@ if (isset($_GET['username'])) {
             <div id = "footer-mid" class = "footer-col" >
               <h4>company</h4>
               <ol>
-                <div class = "f"><a href = "Introduction.html">our team</a></div>
+                <div class = "f"><a href = "../html/Introduction.html">our team</a></div>
                 <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">contact us</a></div>
-                <div class = "f"><a href = "#">privacy policy</a></div>
-                <div class = "f"><a href = "#">terms of services</a></div>
+                <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">privacy policy</a></div>
+                <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">terms of services</a></div>
               </ol>
           </div>
           <div id = "footer-mid" class = "footer-col">
             <h4>menu</h4>
             <ol>
-              <div class = "f"><a href = "guides_page.html">list of guides</a></div>
-              <div class = "f"><a href = "#">social features</a></div>
+              <div class = "f"><a href = "../php/GuidesPage.php">list of guides</a></div>
+              <div class = "f"><a href = "../php/TravelersHubnew.php">travelers hub</a></div>
             </ol>
         </div>
         <div id = "footer-mid" class = "footer-col">
@@ -195,6 +195,4 @@ if (isset($_GET['username'])) {
         var element = document.querySelector('.row1');
         element.classList.add('active');
     });
-  
-
-  </script>
+</script>

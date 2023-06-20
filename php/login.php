@@ -1,6 +1,6 @@
 <?php
 
-$link = mysqli_connect('localhost', 'root', '', 'travelwebsite') or die("No connection");
+$link = mysqli_connect('localhost', 'root', '', 'travelwebsite2') or die("No connection");
 
 session_start();
 

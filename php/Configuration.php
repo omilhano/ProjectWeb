@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("localhost", "root", "", "travelwebsite");
+$link = mysqli_connect("localhost", "root", "", "travelwebsite2");
 
 //chech connection
 if($link == false) {

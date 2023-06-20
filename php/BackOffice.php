@@ -186,7 +186,7 @@ if (isset($_SESSION['username'])) {
 
       <ul class = "navbar">
           <li><a href = "../html/HomePageAdmin.html" class = "active" >Home</a></li>
-          <li><a href = "../php/GuidesPage.php">List of Guides</a></li>
+          <li><a href = "../php/GuidesPageAdmin.php">List of Guides</a></li>
 
       </ul>
 
@@ -271,17 +271,18 @@ if (isset($_SESSION['username'])) {
               <div id = "footer-mid" class = "footer-col" >
                 <h4>company</h4>
                 <ol>
-                  <div class = "f"><a href = "../html/Introduction.html">our team</a></div>
-                  <div class = "f"><a href = "../html/https://www.youtube.com/watch?v=xvFZjo5PgG0">contact us</a></div>
-                  <div class = "f"><a href = "#">privacy policy</a></div>
-                  <div class = "f"><a href = "#">terms of services</a></div>
+                  <div class = "f"><a href = "../html/IntroductionAdmin.html">our team</a></div>
+                  <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">contact us</a></div>
+                  <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">privacy policy</a></div>
+                  <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">terms of services</a></div>
                 </ol>
             </div>
             <div id = "footer-mid" class = "footer-col">
               <h4>menu</h4>
               <ol>
-                <div class = "f"><a href = "../php/GuidesPage.php">list of guides</a></div>
-                <div class = "f"><a href = "../php/TravelersHubnew.php">Travelers Hub</a></div>
+                <div class = "f"><a href = "../php/GuidesPageAdmin.php">list of guides</a></div>
+                <div class = "f"><a href = "../php/TravelersHubnewAdmin.php">Travelers Hub</a></div>
+                <div class = "f"><a href = "../php/BackOffice.php">BackOffice</div>
                 <div class = "f"><a href = "../php/Profilepage.php">profile page</a></div>
               </ol>
           </div>
