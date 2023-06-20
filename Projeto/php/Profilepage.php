@@ -257,6 +257,7 @@ if (isset($_SESSION['username'])) {
         </div>
       </div>
     </div>
+  </div>
     <!--Footer-->
     <div class="clearfix">
       <footer class="footer">
@@ -298,7 +299,6 @@ if (isset($_SESSION['username'])) {
             </div>
           </div>
         </div>
-
       </footer>
     </div>
     <script src="Introduction.js"></script>
@@ -371,4 +371,5 @@ if (isset($_SESSION['username'])) {
       }
     </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>~
+</body>
