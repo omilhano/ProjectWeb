@@ -125,10 +125,10 @@ body{
 <body >
 <div class = "background-image">
   <header>
-    <a href = "../html/HomePageAdmin.html" class = "nav_logo"><img src = "../img/logo1.png"></a>
+    <a href = "../php/HomePageAdmin.php" class = "nav_logo"><img src = "../img/logo1.png"></a>
 
     <ul class = "navbar">
-        <li><a href = "../html/HomePageAdmin.html" class = "active" >Home</a></li>
+        <li><a href = "../php/HomePageAdmin.php" class = "active" >Home</a></li>
         <li><a href = "../php/GuidesPageAdmin.php">List of Guides</a></li>
         <li><a href = "../php/Profilepage.php">Profile Page</a></li>
         <li><a href = "../php/BackOffice.php">BackOffice</a></li>
@@ -192,7 +192,7 @@ body{
             <div id = "footer-logo" class = "footer-col" >
                 <ol >
                   <div id = "logo">
-                    <a class = "a" href = "../html/HomePageAdmin.html"><img id = "logo1" src = "../img/logo1.png"></a>
+                    <a class = "a" href = "../php/HomePageAdmin.php"><img id = "logo1" src = "../img/logo1.png"></a>
                     <div class = "copyright"><i></i>Copyright © 2023 "Web Project" All rights reserved.</div>
                   </div>
                 </ol>
@@ -202,8 +202,8 @@ body{
               <ol>
                 <div class = "f"><a href = "../html/IntroductionAdmin.html">our team</a></div>
                 <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">contact us</a></div>
-                <div class = "f"><a href = "#">privacy policy</a></div>
-                <div class = "f"><a href = "#">terms of services</a></div>
+                <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">privacy policy</a></div>
+                <div class = "f"><a href = "https://www.youtube.com/watch?v=xvFZjo5PgG0">terms of services</a></div>
               </ol>
           </div>
           <div id = "footer-mid" class = "footer-col">
@@ -211,7 +211,7 @@ body{
             <ol>
               <div class = "f"><a href = "../php/GuidesPageAdmin.php">list of guides</a></div>
               <div class = "f"><a href = "../php/TravelersHubnewAdmin.php">Travelers Hub</a></div>
-              <div class = "f"><a href = "../php/Profilepage.php">profile page</a></div>
+              <div class = "f"><a href = "../php/ProfilepageAdmin.php">profile page</a></div>
             </ol>
         </div>
         <div id = "footer-mid" class = "footer-col">
