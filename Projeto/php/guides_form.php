@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/guides_forum.css">
+    <!-- <link rel="stylesheet" href="../css/guides_form.css"> -->
+    <style>
+        body {
+            background: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form_container {
+            border: 2px solid #ccc;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+        }
+
+        input[type="text"]:not([name="image"]):not([type="file"]),
+        input[type="date"]:not([name="image"]):not([type="file"]),
+        input[type="number"]:not([name="image"]):not([type="file"]) {
+            border: none;
+            border-bottom: 1px solid black;
+            padding: 5px;
+            width: 33%;
+        }
+    </style>
 </head>
+
 <body>
-    <div class = "form_container">
+    <div class="form_container">
         <form action="guides_submit.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
-            
+
             <p>
                 <label for="username">Username</label>
                 <input type="text" name="username" required>
@@ -28,7 +55,8 @@
             </p>
             <p>
                 <label style="position: relative; bottom: 50px" for="content">Description</label>
-                <textarea style="width: 33%; height: 100px; resize: vertical; padding: 10px;" type="text" name="content" maxlength="400" required></textarea>
+                <textarea style="width: 33%; height: 100px; resize: vertical; padding: 10px;" type="text" name="content"
+                    maxlength="400" required></textarea>
             </p>
             <p>
                 <label for="days">Nº of Days</label>
@@ -67,4 +95,5 @@
         </form>
     </div>
 </body>
+
 </html>
