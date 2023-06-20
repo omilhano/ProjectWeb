@@ -36,9 +36,8 @@ if (isset($_SESSION['username'])) {
   }
   $sql = "SELECT * FROM follow WHERE follower_username = '$username'";
   $result = mysqli_query($link, $sql);
-  
+  $all_follow_string = "You don't follow anyone";
   if ($result && mysqli_num_rows($result) > 0) {
-  $all_follow_string = "";
   $all_follow = array();
 
     while ($follow_connection = mysqli_fetch_assoc($result)) {
@@ -55,7 +54,7 @@ if (isset($_SESSION['username'])) {
   }
   // Close the database connection
   mysqli_close($link);
-} else {
+}else{
   echo "No user found.";
 }
 ?>
@@ -212,9 +211,9 @@ if (isset($_SESSION['username'])) {
               <!-- Modal content -->
               <div class="modal-content">
                 <span class="close">&times;</span>
-                <p id="modal_text">You follow: <br>
-                  <?= $all_follow_string ?>
-                </p>
+                <h4 id="modal_text">You follow: <br>
+                </h4>
+                <p id="modal_text"><?= $all_follow_string ?></p>
               </div>
             </div>
             <div>
