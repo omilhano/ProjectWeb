@@ -7,10 +7,9 @@ session_start();
 if (@$_REQUEST['logout'] == 1) {
     logout();
 }
-
 if (@$_POST['username'] && @$_POST['password']) {
     $uuser = mysqli_real_escape_string($link, $_POST['username']);
-    $inputPassword = ($_POST['password']);
+    $inputPassword = md5($_POST['password']);
     
     $sql = "SELECT Password, Admin, Email, Username FROM user WHERE email='$uuser'";
     $result = mysqli_query($link, $sql);
