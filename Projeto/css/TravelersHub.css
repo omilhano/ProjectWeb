@@ -1,0 +1,139 @@
+body {
+    overflow-x: hidden;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar li a,
+  .nav_main a {
+    text-decoration: none;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    box-sizing: border-box; /* Subtract the header height from the viewport height */
+  }
+  
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .main-content {
+    width: 80%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  
+  .box {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .box-container {
+    display: block;
+  }
+  
+  .box-container .box {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+  }
+  
+  #profile_pic {
+    width: 60%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .wrapper {
+      flex-wrap: wrap;
+            }
+  
+    }   
+  @media (max-width: 1280px) {
+    header {
+      padding: 14px 2%;
+      transition: 0.2s;
+    }
+  
+    .navbar a {
+      padding: 5px 0;
+      margin: 0px 20px;
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    #menu-icon {
+      display: block;
+    }
+  
+    .navbar {
+      position: absolute;
+      top: 100%;
+      right: 2%;
+      width: 270px;
+      background: var(--main-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+  
+    .navbar a {
+      display: block;
+      margin: 12px 0;
+      padding: 0px 25px;
+      transition: all 0.3s ease;
+    }
+  
+    .navbar a:hover {
+      color: var(--text-color);
+      transform: translateY(10px);
+    }
+  
+    .navbar {
+      display: none;
+    }
+  
+    .navbar a.active {
+      color: var(--text-color);
+    }
+  
+    .navbar.open {
+      display: block;
+    }
+  }
+  
+  @media only screen and (max-width: 534px) {
+    .nav_main {
+      width: 1rem;
+    }
+  }
+  
+  @media (max-width: 385px) {
+    .nav_main a {
+      font-size: 1.5rem;
+    }
+  }
