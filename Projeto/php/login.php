@@ -23,7 +23,7 @@ if (@$_POST['username'] && @$_POST['password']) {
         $isAdmin = $row['Admin'];
         
         if ($inputPassword != $storedPassword) {
-            print('hello');
+            print('Wrong Password');
             exit;
         }
 
