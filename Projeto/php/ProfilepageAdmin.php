@@ -130,10 +130,10 @@ if (isset($_SESSION['username'])) {
 <body>
   <div class="background-image">
     <header>
-      <a href="../html/HomePageAdmin.html" class="nav_logo"><img src="../img/logo1.png"></a>
+      <a href="../php/HomePageAdmin.php" class="nav_logo"><img src="../img/logo1.png"></a>
 
       <ul class="navbar">
-        <li><a href="../html/HomePageAdmin.html" class="active">Home</a></li>
+        <li><a href="../php/HomePageAdmin.php" class="active">Home</a></li>
         <li><a href="../php/GuidesPageAdmin.php">List of Guides</a></li>
         <li><a href="../php/TravelersHubnewAdmin.php">Travelers Hub</a></li>
       </ul>
@@ -263,7 +263,7 @@ if (isset($_SESSION['username'])) {
             <div id="footer-logo" class="footer-col">
               <ol>
                 <div id="logo">
-                  <a class="a" href="../html/HomePageAdmin.html"><img id="logo1" src="../img/logo1.png"
+                  <a class="a" href="../php/HomePageAdmin.php"><img id="logo1" src="../img/logo1.png"
                       style="width: 40%;"></a>
                   <div class="copyright"><i></i>Copyright © 2023 "Web Project" All rights reserved.</div>
                 </div>
