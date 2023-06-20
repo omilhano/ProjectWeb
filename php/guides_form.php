@@ -9,7 +9,7 @@
     <form action="guides_submit.php" method="POST" enctype="multipart/form-data">
         <p>
             <label for="username">Username</label>
-            <input type="text" name="username">
+            <input type="text" name="username" id="username">
         </p>
         <p>
             <label for="date">Date</label>
