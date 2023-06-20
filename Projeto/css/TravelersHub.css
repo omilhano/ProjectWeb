@@ -38,6 +38,14 @@ body {
     margin-bottom: 20px;
   }
   
+  .user_n{
+    color: #489FB5;
+  }
+
+  .v{
+    color: #ffa62b
+  }
+
   .box {
     width: 100%;
     padding: 20px;
