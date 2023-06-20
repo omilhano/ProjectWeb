@@ -144,7 +144,7 @@ body{
   </header>
 <!--Main-->
 <?php
-  $query = "SELECT id, Country, Location, Image, id_user FROM guides ORDER BY id DESC LIMIT 3";
+  $query = "SELECT id, Country, Location, Image, id_user, Control FROM guides ORDER BY id DESC LIMIT 3";
   
   $result = mysqli_query($link, $query);
   
