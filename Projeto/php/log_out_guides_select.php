@@ -22,7 +22,7 @@ if (!isset($_SESSION['form_token'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="guides.css">
+    <link rel="stylesheet" href="../css/guides.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDabHG6aejXWQtt5RnRMJbpWV6RL6a6rcU"></script>
     <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'
         rel='stylesheet'>
